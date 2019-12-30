@@ -294,7 +294,7 @@
     <Drawer
       variant={miniWindow ? 'modal' : null}
       bind:open={drawerOpen}
-      class="demo-drawer mdc-theme--secondary-bg {miniWindow ? 'demo-drawer-adjust' : ''}">
+      class="demo-drawer mdc-theme--primary-bg {miniWindow ? 'demo-drawer-adjust' : ''}">
       <Content>
         <List>
           {#each sections as section (section.name)}
@@ -316,7 +316,7 @@
       <Scrim />
     {/if}
     <AppContent class="demo-app-content">
-      <main class="demo-main-content" bind:this={mainContent}>
+      <main class="demo-main-content p-4" bind:this={mainContent}>
         <slot />
       </main>
     </AppContent>
