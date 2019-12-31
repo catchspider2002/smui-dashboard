@@ -1,14 +1,14 @@
 <script>
   import Icon from "./Icon.svelte";
 
-   export let header,
+  export let header,
     dotSize = "sm", // "xs" | "sm" | "md" | "lg" | "xl"
     title,
     subtitle,
     text,
     position = "right",
     border,
-    icon="br",
+    icon = "br",
     classes;
   if (position === "left") {
     classes = "timeline__content--flipped";
@@ -66,9 +66,7 @@
 </script>
 
 <style>
-
-
-.timeline__entry:after {
+  .timeline__entry:after {
     content: "";
     display: table;
     clear: both;
@@ -158,15 +156,17 @@
   <!-- <div class="timeline__id absolute bg-purple-400 p-1 mt-6 ml-8 rounded-full">
     <Icon margin="mx-0" size={iconSize} />
   </div> -->
-  <div class="timeline__id absolute bg-red-400 border-white {dotClass} shadow-md ml-8 rounded-full" >
-  {#if icon}
-  <Icon margin="mx-0" size={iconSize} />
-  {/if}
+  <div
+    class="timeline__id absolute bg-red-400 border-white {dotClass} shadow-md
+    ml-8 rounded-full">
+    {#if icon}
+      <Icon margin="mx-0" size={iconSize} />
+    {/if}
   </div>
 
   <div
-    class="timeline__content flex flex-col relative block bg-white p-4 ml-20 shadow-md
-    sm:ml-0 {classes}">
+    class="timeline__content flex flex-col relative block bg-white p-4 ml-20
+    shadow-md sm:ml-0 {classes}">
     <span class="text-xl font-semibold text-center text-red-500 mb-2">
       {header}
     </span>

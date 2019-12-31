@@ -85,6 +85,21 @@
       name: "Timeline",
       route: "/ComponentPages/Timeline",
       indent: 0
+    },
+    {
+      name: "Accordion",
+      route: "/ComponentPages/Accordion",
+      indent: 0
+    },
+    {
+      name: "Avatar",
+      route: "/ComponentPages/AvatarPage",
+      indent: 0
+    },
+    {
+      name: "Divider",
+      route: "/ComponentPages/DividerPage",
+      indent: 0
     }
   ];
 
