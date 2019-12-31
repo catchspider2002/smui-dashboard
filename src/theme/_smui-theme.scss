@@ -180,7 +180,7 @@ $mdc-switch-toggled-off-track-color: var(--switch-track-color);
 $mdc-switch-baseline-theme-color: primary !default;
 
 .mdc-button--raised:disabled,
-.mdc-button--unelevated:disabled {
+.mdc-button--unelevated:disabled { 
     background-color: var(--disabled-button-bg-color);
 }
 
@@ -226,9 +226,9 @@ $mdc-switch-baseline-theme-color: primary !default;
 
 // Card
 
-.mdc-card__action--icon:not(:disabled) {
-    color: var(--enabled-color);
-}
+// .mdc-card__action--icon:not(:disabled) {
+//     color: var(--enabled-color);
+// }
 
 // Alert
 

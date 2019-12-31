@@ -1,7 +1,6 @@
 <script>
   import { onMount } from "svelte";
   import { stores } from "@sapper/app";
-  import { mdiTwitter, mdiGithubCircle } from "@mdi/js";
 
   import "./_app.scss";
   import "./tailwind.css";
@@ -73,138 +72,18 @@
       indent: 0
     },
     {
-      name: "Buttons",
-      route: "/demo/button",
+      name: "Card",
+      route: "/ComponentPages/Card",
       indent: 0
     },
     {
-      name: "Floating Action Button",
-      route: "/demo/fab",
-      indent: 1
-    },
-    {
-      name: "Icon Buttons",
-      route: "/demo/icon-button",
-      indent: 1
-    },
-    {
-      name: "Cards",
-      route: "/demo/card",
+      name: "Dashboard",
+      route: "/ComponentPages/Dashboard",
       indent: 0
     },
     {
-      name: "Chips",
-      route: "/demo/chips",
-      indent: 0
-    },
-    {
-      name: "Data Tables",
-      route: "/demo/data-table",
-      indent: 0
-    },
-    {
-      name: "Dialogs",
-      route: "/demo/dialog",
-      indent: 0
-    },
-    {
-      name: "Drawers",
-      route: "/demo/drawer",
-      indent: 0
-    },
-    {
-      name: "Elevation",
-      route: "/demo/elevation",
-      indent: 0
-    },
-    {
-      name: "Image List",
-      route: "/demo/image-list",
-      indent: 0
-    },
-    {
-      name: "Checkboxes",
-      route: "/demo/checkbox",
-      indent: 1
-    },
-    {
-      name: "Radio Buttons",
-      route: "/demo/radio",
-      indent: 1
-    },
-    {
-      name: "Select Menus",
-      route: "/demo/select",
-      indent: 1
-    },
-    {
-      name: "Sliders",
-      route: "/demo/slider",
-      indent: 1
-    },
-    {
-      name: "Switches",
-      route: "/demo/switch",
-      indent: 1
-    },
-    {
-      name: "Text Field",
-      route: "/demo/textfield",
-      indent: 1
-    },
-    {
-      name: "Linear Progress",
-      route: "/demo/linear-progress",
-      indent: 0
-    },
-    {
-      name: "Lists",
-      route: "/demo/list",
-      indent: 0
-    },
-    {
-      name: "Menu Surface",
-      route: "/demo/menu-surface",
-      indent: 0
-    },
-    {
-      name: "Menus",
-      route: "/demo/menu",
-      indent: 0
-    },
-    {
-      name: "Paper",
-      route: "/demo/paper",
-      indent: 0
-    },
-    {
-      name: "Ripples",
-      route: "/demo/ripple",
-      indent: 0
-    },
-    {
-      name: "Snackbars",
-      route: "/demo/snackbars",
-      indent: 0
-    },
-    {
-      name: "Tabs",
-      route: "/demo/tabs",
-      indent: 0
-    },
-    {
-      name: "Theme",
-      route: "/demo/theme",
-      indent: 0
-    },
-    {
-      name: "Top App Bar",
-      route: "/demo/top-app-bar",
-      indent: 0
-    },
-    {
-      name: "Typography",
-      route: "/demo/typography",
+      name: "Timeline",
+      route: "/ComponentPages/Timeline",
       indent: 0
     }
   ];
@@ -246,56 +125,37 @@
 {#if iframe}
   <slot />
 {:else}
-  <TopAppBar variant="static" class="demo-top-app-bar">
-    <Row>
-      <Section>
-        {#if miniWindow}
-          <IconButton
-            class="material-icons"
-            on:click={() => (drawerOpen = !drawerOpen)}>
-            menu
-          </IconButton>
-        {/if}
-        <Title
-          component={A}
-          href="/"
-          class="mdc-theme--primary"
-          style={miniWindow ? 'padding-left: 0;' : ''}>
-          Svelte Material UI
-        </Title>
-      </Section>
-      <Section align="end" toolbar>
-        <IconButton
-          toggle
-          bind:pressed={initialOff}
-          on:click={switchTheme}
-          title="Enable {currentTheme} mode">
-          <Icon class="material-icons text-yellow-600" on>brightness_2</Icon>
-          <Icon class="material-icons text-yellow-400">wb_sunny</Icon>
-        </IconButton>
-        <!-- <IconButton href="https://twitter.com/SciActive">
-          <Icon>
-            <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-              <path fill="#000000" d={mdiTwitter} />
-            </svg>
-          </Icon>
-        </IconButton>
-        <IconButton href="https://github.com/hperrin/svelte-material-ui">
-          <Icon>
-            <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-              <path fill="#000000" d={mdiGithubCircle} />
-            </svg>
-          </Icon>
-        </IconButton> -->
-      </Section>
-    </Row>
-  </TopAppBar>
   <div class="drawer-container">
-    <Drawer
+
+    <!-- <Drawer
+      variant="modal"
+      bind:open={drawerOpen}
+      class="demo-drawer mdc-theme--primary-bg {miniWindow ? 'demo-drawer-adjust' : ''}"> -->
+      <Drawer
       variant={miniWindow ? 'modal' : null}
       bind:open={drawerOpen}
       class="demo-drawer mdc-theme--primary-bg {miniWindow ? 'demo-drawer-adjust' : ''}">
       <Content>
+        <Row>
+          <Section>
+            <IconButton>
+              <Icon class="material-icons text-yellow-400">ac_unit</Icon>
+            </IconButton>
+            <Title component={A} href="/">SMUI</Title>
+          </Section>
+          <Section align="end">
+            <IconButton
+              toggle
+              bind:pressed={initialOff}
+              on:click={switchTheme}
+              title="Disable {currentTheme} mode">
+              <Icon class="material-icons text-yellow-600" on>
+                chevron_right
+              </Icon>
+              <Icon class="material-icons text-yellow-400">chevron_left</Icon>
+            </IconButton>
+          </Section>
+        </Row>
         <List>
           {#each sections as section (section.name)}
             <Item
@@ -316,6 +176,41 @@
       <Scrim />
     {/if}
     <AppContent class="demo-app-content">
+      <TopAppBar variant="static" class="demo-top-app-bar">
+        <Row>
+          <Section>
+            {#if miniWindow}
+              <IconButton
+                class="material-icons"
+                on:click={() => (drawerOpen = !drawerOpen)}>
+                menu
+              </IconButton>
+            {/if}
+            <Title
+              component={A}
+              href="/"
+              class="mdc-theme--primary"
+              style={miniWindow ? 'padding-left: 0;' : ''}>
+              Dashboard
+            </Title>
+          </Section>
+          <Section align="end" toolbar>
+            <IconButton on:click={() => (drawerOpen = !drawerOpen)}>
+              <Icon class="material-icons text-yellow-400">chevron_right</Icon>
+            </IconButton>
+            <IconButton
+              toggle
+              bind:pressed={initialOff}
+              on:click={switchTheme}
+              title="Disable {currentTheme} mode">
+              <Icon class="material-icons text-yellow-600" on>
+                brightness_2
+              </Icon>
+              <Icon class="material-icons text-yellow-400">wb_sunny</Icon>
+            </IconButton>
+          </Section>
+        </Row>
+      </TopAppBar>
       <main class="demo-main-content p-4" bind:this={mainContent}>
         <slot />
       </main>
