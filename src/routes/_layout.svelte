@@ -82,12 +82,12 @@
       indent: 0
     },
     {
-      name: "Timeline",
+      name: "Timeline (PRO)",
       route: "/ComponentPages/Timeline",
       indent: 0
     },
     {
-      name: "Accordion",
+      name: "Accordion (PRO)",
       route: "/ComponentPages/Accordion",
       indent: 0
     },
@@ -98,6 +98,21 @@
     },
     {
       name: "Divider",
+      route: "/ComponentPages/DividerPage",
+      indent: 0
+    },
+    {
+      name: "Dropdown",
+      route: "/ComponentPages/DividerPage",
+      indent: 0
+    },
+    {
+      name: "Dialog",
+      route: "/ComponentPages/DividerPage",
+      indent: 0
+    },
+    {
+      name: "Tabs",
       route: "/ComponentPages/DividerPage",
       indent: 0
     }
