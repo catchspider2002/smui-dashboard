@@ -113,7 +113,7 @@
     },
     {
       name: "Tabs",
-      route: "/ComponentPages/DividerPage",
+      route: "/ComponentPages/TabPage",
       indent: 0
     }
   ];

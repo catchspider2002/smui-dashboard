@@ -48,15 +48,16 @@ body, app {
 }
 
 // @import "@material/top-app-bar/variables";
-.demo-drawer.demo-drawer-adjust {
-  padding-bottom: $mdc-top-app-bar-row-height;
-}
+// .demo-drawer.demo-drawer-adjust {
+//   padding-bottom: $mdc-top-app-bar-row-height;
+// }
 
 .demo-app-content {
   flex: auto;
   position: relative;
   // width: 0;
   flex-grow: 1;
+  padding-bottom: 100px;
 }
 
 .demo-main-content {

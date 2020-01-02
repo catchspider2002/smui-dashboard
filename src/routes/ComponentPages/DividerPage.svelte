@@ -16,26 +16,16 @@
   </span>
   <div slot="content">
     <Example>
-      <span slot="header">Usage</span>
+      <span slot="header">Horizontal</span>
       <div slot="vertical" class="mb-8">
         <Divider />
       </div>
     </Example>
     <Example>
-      <span slot="header">Left aligned text</span>
+      <span slot="header">Divider with title</span>
       <div slot="vertical" class="mb-8">
         <Divider orientation="left" children="Left" />
-      </div>
-    </Example>
-    <Example>
-      <span slot="header">Right aligned text</span>
-      <div slot="vertical" class="mb-8">
         <Divider orientation="right" children="Right" />
-      </div>
-    </Example>
-    <Example>
-      <span slot="header">Center aligned text</span>
-      <div slot="vertical" class="mb-8">
         <Divider orientation="center" children="Center" />
       </div>
     </Example>
@@ -54,7 +44,11 @@
     <Example>
       <span slot="header">Vertical</span>
       <div slot="vertical" class="mb-8">
+        Home
         <Divider direction="vertical" />
+        Team
+        <Divider direction="vertical" />
+        About
       </div>
     </Example>
   </div>
