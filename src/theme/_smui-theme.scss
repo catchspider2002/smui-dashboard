@@ -1,7 +1,6 @@
 // $mdc-theme-background: #fff;
 // $mdc-theme-surface: #fff;
 
-
 @import "@material/theme/color-palette";
 
 $mdc-typography-font-family: var(--font-family);
@@ -180,7 +179,7 @@ $mdc-switch-toggled-off-track-color: var(--switch-track-color);
 $mdc-switch-baseline-theme-color: primary !default;
 
 .mdc-button--raised:disabled,
-.mdc-button--unelevated:disabled { 
+.mdc-button--unelevated:disabled {
     background-color: var(--disabled-button-bg-color);
 }
 

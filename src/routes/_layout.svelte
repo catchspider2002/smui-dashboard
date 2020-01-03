@@ -151,6 +151,9 @@
   };
 </script>
 
+<style>
+</style>
+
 <svelte:window on:resize={setMiniWindow} />
 {#if iframe}
   <slot />
@@ -161,7 +164,7 @@
       variant="modal"
       bind:open={drawerOpen}
       class="demo-drawer mdc-theme--primary-bg {miniWindow ? 'demo-drawer-adjust' : ''}"> -->
-      <Drawer
+    <Drawer
       variant={miniWindow ? 'modal' : null}
       bind:open={drawerOpen}
       class="demo-drawer mdc-theme--primary-bg {miniWindow ? 'demo-drawer-adjust' : ''}">
@@ -211,7 +214,7 @@
           <Section>
             {#if miniWindow}
               <IconButton
-                class="material-icons"
+                class="material-icons" style="color: var(--font-color);"
                 on:click={() => (drawerOpen = !drawerOpen)}>
                 menu
               </IconButton>

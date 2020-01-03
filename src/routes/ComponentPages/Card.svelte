@@ -134,15 +134,15 @@
         <Content>A card with Both.</Content>
         <Actions>
           <ActionButtons>
-            <Button on:click={() => clicked++}>
+            <Button class="enabled-color" on:click={() => clicked++}>
               <Label>Action</Label>
             </Button>
-            <Button on:click={() => clicked++}>
+            <Button class="enabled-color" on:click={() => clicked++}>
               <Label>Another</Label>
             </Button>
           </ActionButtons>
           <ActionIcons>
-            <IconButton
+            <IconButton style="color: var(--enabled-color);"
               on:click={() => clicked++}
               toggle
               aria-label="Add to favorites"

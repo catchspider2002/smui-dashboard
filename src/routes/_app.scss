@@ -94,3 +94,11 @@ section > div {
 .mdc-card__action--icon:not(:disabled) {
   color: var(--enabled-color);
 }
+
+.font-color {
+    color: var(--font-color);
+}
+
+.enabled-color {
+    color: var(--enabled-color);
+}
