@@ -85,7 +85,7 @@ body {
     --mdc-text-field-ink-color: var(--other-font-color);
     --mdc-theme-text-primary-on-background: var(--font-color);
     // --mdc-theme-surface: var(--bg-color);
-    --mdc-theme-surface: transparent;
+    --mdc-theme-surface: var(--bg-layer-color);
     --duration: 0.5s;
     --timing: ease;
     background-color: var(--bg-color);
@@ -110,11 +110,6 @@ $mdc-data-table-divider-color: var(--disabled-color);
 //v4.0.0
 // $mdc-data-table-header-cell-height: 36px;
 // $mdc-data-table-cell-height: 36px;
-
-.mdc-data-table__cell,
-.mdc-data-table__header-cell {
-    color: var(--font-color);
-}
 
 // Radio
 $mdc-radio-unchecked-color: var(--enabled-color);

@@ -13,38 +13,40 @@
 // Main Top App Bar styling.
 @import "@smui/top-app-bar/style";
 .mdc-top-app-bar.demo-top-app-bar {
-  // Color the top bar with "surface" colors.
-  @include mdc-top-app-bar-fill-color-accessible(surface);
-  @include mdc-top-app-bar-icon-ink-color(on-surface);
-  // Give it a shadow.
-  @include mdc-elevation(2);
-  // Position it above the drawer.
-  z-index: 7;
+    // Color the top bar with "surface" colors.
+    @include mdc-top-app-bar-fill-color-accessible(surface);
+    @include mdc-top-app-bar-icon-ink-color(on-surface);
+    // Give it a shadow.
+    @include mdc-elevation(2);
+    // Position it above the drawer.
+    z-index: 7;
 }
 
 // Now on to the regular app styling stuff.
 
 html {
-  height: 100vh;
-  width: 100vw;
-  position: fixed;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
 }
 
-body, app {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+body,
+app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .drawer-container {
-  flex-grow: 1;
-  height: 0;
-  display: flex;
+    flex-grow: 1;
+    height: 0;
+    display: flex;
 }
 
-.demo-drawer, .demo-main-content {
-  overflow: auto;
-  height: 100%;
+.demo-drawer,
+.demo-main-content {
+    overflow: auto;
+    height: 100%;
 }
 
 // @import "@material/top-app-bar/variables";
@@ -53,52 +55,38 @@ body, app {
 // }
 
 .demo-app-content {
-  flex: auto;
-  position: relative;
-  // width: 0;
-  flex-grow: 1;
-  padding-bottom: 100px;
+    flex: auto;
+    position: relative;
+    width: 100%;
+    flex-grow: 1;
+    margin-bottom: 100px;
 }
 
 .demo-main-content {
-  overflow: auto;
-  display: flex;
-  flex-direction: column;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .demo-main-content section {
-  padding: 16px;
-  width: 100%; 
-  box-sizing: border-box;
+    padding: 16px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .demo-main-content section:after {
-  height: 32px;
-  display: block;
-  content: " ";
+    height: 32px;
+    display: block;
+    content: " ";
 }
 
 section > div {
-  margin: 1em 0 .6em;
+    margin: 1em 0 0.6em;
 }
 
 .status {
-  max-width: 100%;
-  font-size: .9em;
-  word-break: break-word;
-  white-space: normal;
-}
-
-
-
-.mdc-card__action--icon:not(:disabled) {
-  color: var(--enabled-color);
-}
-
-.font-color {
-    color: var(--font-color);
-}
-
-.enabled-color {
-    color: var(--enabled-color);
+    max-width: 100%;
+    font-size: 0.9em;
+    word-break: break-word;
+    white-space: normal;
 }

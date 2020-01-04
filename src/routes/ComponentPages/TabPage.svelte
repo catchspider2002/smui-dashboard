@@ -49,16 +49,13 @@
   section > div {
     margin-bottom: 40px;
   }
-  .icon-indicators
-    :global(.mdc-tab-indicator--active .mdc-tab-indicator__content) {
-    opacity: 0.2;
-  }
 </style>
 
 <Page>
   <span slot="header">Tab</span>
   <span slot="description">
-    Tabs organize and allow navigation between groups of content that are related and at the same level of hierarchy.
+    Tabs organize and allow navigation between groups of content that are
+    related and at the same level of hierarchy.
   </span>
   <span slot="import">
     import Switch from "@smui/switch";
@@ -66,67 +63,47 @@
     import FormField from "@smui/form-field";
   </span>
   <div slot="content">
-    <Example>
-      <span slot="header">Usage</span>
-
-      <div slot="horizontal" class="mr-8 mb-8">
-        <TabBar tabs={['Home', 'Merchandise', 'About Us']} let:tab bind:active>
-          <!-- Notice that the `tab` property is required! -->
-          <Tab {tab}>
-            <Label>{tab}</Label>
-          </Tab>
-        </TabBar>
-      </div>
-    </Example>
-    <Example>
-      <span slot="header">Labels</span>
-      <div slot="horizontal" class="mr-8 mb-8">
-        <TabBar tabs={iconTabs} let:tab>
-          <Tab {tab}>
-            <Icon class="material-icons">{tab.icon}</Icon>
-            <Label>{tab.label}</Label>
-          </Tab>
-        </TabBar>
-      </div>
-    </Example>
-    <Example>
-      <span slot="header">Labels</span>
-      <div slot="horizontal" class="mr-8 mb-8">
-        <TabBar
-          tabs={keyedTabs}
-          let:tab
-          key={tab => tab.k}
-          bind:active={keyedTabsActive}>
-          <Tab
-            {tab}
-            stacked={true}
-            indicatorSpanOnlyContent={true}
-            tabIndicator$transition="fade">
-            <Icon class="material-icons">{tab.icon}</Icon>
-            <Label>{tab.label}</Label>
-          </Tab>
-        </TabBar>
-      </div>
-    </Example>
-    <Example>
-      <span slot="header">Labels</span>
-      <div slot="horizontal" class="mr-8 mb-8">
-        <TabBar tabs={[...Array(20)].map((v, i) => i + 1)} let:tab>
-          <Tab {tab}>
-            <Label>Tab {tab}</Label>
-          </Tab>
-        </TabBar>
-      </div>
-    </Example>
-    <Example>
-      <span slot="header">Labels</span>
-      <div slot="horizontal" class="mr-8 mb-8">
-        <TabBar tabs={['Home', 'Merchandise', 'About Us']} let:tab>
-          <Tab {tab} minWidth>
-            <Label>{tab}</Label>
-          </Tab>
-        </TabBar>
-      </div>
-    </Example>
+    <div class="text-base font-semibold py-4">Usage</div>
+    <TabBar tabs={['Home', 'Merchandise', 'About Us']} let:tab bind:active>
+      <!-- Notice that the `tab` property is required! -->
+      <Tab {tab}>
+        <Label>{tab}</Label>
+      </Tab>
+    </TabBar>
+    <div class="text-base font-semibold py-4">Icons beside Labels</div>
+    <TabBar tabs={iconTabs} let:tab>
+      <Tab {tab}>
+        <Icon class="material-icons">{tab.icon}</Icon>
+        <Label>{tab.label}</Label>
+      </Tab>
+    </TabBar>
+    <div class="text-base font-semibold py-4">Icons above Labels</div>
+    <TabBar
+      tabs={keyedTabs}
+      let:tab
+      key={tab => tab.k}
+      bind:active={keyedTabsActive}>
+      <Tab
+        {tab}
+        stacked={true}
+        indicatorSpanOnlyContent={true}
+        tabIndicator$transition="fade">
+        <Icon class="material-icons">{tab.icon}</Icon>
+        <Label>{tab.label}</Label>
+      </Tab>
+    </TabBar>
+    <!-- <Example> -->
+    <div class="text-base font-semibold py-4">Scrolling Tabs</div>
+    <TabBar tabs={[...Array(20)].map((v, i) => i + 1)} let:tab>
+      <Tab {tab}>
+        <Label>Tab {tab}</Label>
+      </Tab>
+    </TabBar>
+    <div class="text-base font-semibold py-4">Minimum Width Labels</div>
+    <TabBar tabs={['Home', 'Merchandise', 'About Us']} let:tab>
+      <Tab {tab} minWidth>
+        <Label>{tab}</Label>
+      </Tab>
+    </TabBar>
   </div>
 </Page>

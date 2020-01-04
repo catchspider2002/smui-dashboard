@@ -34,11 +34,11 @@
   let selected = [options[2]];
 </script>
 
-<!-- <style>
+<style>
   * :global(.mdc-data-table__cell, .mdc-data-table__header-cell) {
     color: var(--font-color);
   }
-</style> -->
+</style>
 
 <Page>
   <span slot="header">Table</span>

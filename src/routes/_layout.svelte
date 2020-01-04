@@ -115,6 +115,16 @@
       name: "Tabs",
       route: "/ComponentPages/TabPage",
       indent: 0
+    },
+    {
+      name: "Tabs2",
+      route: "/ComponentPages/Tabs",
+      indent: 0
+    },
+    {
+      name: "Chips",
+      route: "/ComponentPages/Chips",
+      indent: 0
     }
   ];
 

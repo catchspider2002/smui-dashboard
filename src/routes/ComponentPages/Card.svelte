@@ -41,6 +41,10 @@
   * :global(.card-media-square) {
     background-image: url(https://via.placeholder.com/320x320.png?text=square);
   }
+
+  * :global(.mdc-card__action--icon:not(:disabled)) {
+    color: var(--enabled-color);
+  }
 </style>
 
 <section>
@@ -134,15 +138,15 @@
         <Content>A card with Both.</Content>
         <Actions>
           <ActionButtons>
-            <Button class="enabled-color" on:click={() => clicked++}>
+            <Button on:click={() => clicked++}>
               <Label>Action</Label>
             </Button>
-            <Button class="enabled-color" on:click={() => clicked++}>
+            <Button on:click={() => clicked++}>
               <Label>Another</Label>
             </Button>
           </ActionButtons>
           <ActionIcons>
-            <IconButton style="color: var(--enabled-color);"
+            <IconButton
               on:click={() => clicked++}
               toggle
               aria-label="Add to favorites"
