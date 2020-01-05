@@ -23,6 +23,10 @@
   }
 </style>
 
+<svelte:head>
+  <title>Timeline</title>
+</svelte:head>
+
 <div class="mx-auto p-8 max-w-6xl bg-gray-300">
   <h1 class="pb-8 text-xl text-center text-black">WORK EXPERIENCE</h1>
   <ol class="timeline relative m-0 p-0">

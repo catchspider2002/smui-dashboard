@@ -5,6 +5,10 @@
   import Example from "./Example.svelte";
 </script>
 
+<svelte:head>
+  <title>Alert</title>
+</svelte:head>
+
 <Page>
   <span slot="header">Alert</span>
   <span slot="description">

@@ -18,6 +18,10 @@
   }
 </style> -->
 
+<svelte:head>
+  <title>Switch</title>
+</svelte:head>
+
 <Page>
   <span slot="header">Switch</span>
   <span slot="description">

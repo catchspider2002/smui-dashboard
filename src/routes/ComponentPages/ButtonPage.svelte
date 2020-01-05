@@ -24,6 +24,10 @@
   }
 </style>
 
+<svelte:head>
+  <title>Button</title>
+</svelte:head>
+
 <Page>
   <span slot="header">Button</span>
   <span slot="description">

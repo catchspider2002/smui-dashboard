@@ -47,6 +47,10 @@
   }
 </style>
 
+<svelte:head>
+  <title>Card</title>
+</svelte:head>
+
 <section>
   <h2>Cards</h2>
 

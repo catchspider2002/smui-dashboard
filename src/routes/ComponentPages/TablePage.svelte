@@ -40,6 +40,10 @@
   }
 </style>
 
+<svelte:head>
+  <title>Table</title>
+</svelte:head>
+
 <Page>
   <span slot="header">Table</span>
   <span slot="description">

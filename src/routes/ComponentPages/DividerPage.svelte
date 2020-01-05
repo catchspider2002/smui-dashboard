@@ -4,6 +4,10 @@
   import Example from "./Example.svelte";
 </script>
 
+<svelte:head>
+  <title>Divider</title>
+</svelte:head>
+
 <Page>
   <span slot="header">Divider</span>
   <span slot="description">

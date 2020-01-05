@@ -25,6 +25,10 @@
   } */
 </style>
 
+<svelte:head>
+  <title>Checkbox</title>
+</svelte:head>
+
 <Page>
   <span slot="header">Checkbox</span>
   <span slot="description">

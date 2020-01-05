@@ -35,6 +35,10 @@
   }
 </style>
 
+<svelte:head>
+  <title>Slider</title>
+</svelte:head>
+
 <Page>
   <span slot="header">Slider</span>
   <span slot="description">

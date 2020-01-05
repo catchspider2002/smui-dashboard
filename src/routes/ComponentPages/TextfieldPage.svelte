@@ -58,6 +58,10 @@
   }
 </style> -->
 
+<svelte:head>
+  <title>Text field</title>
+</svelte:head>
+
 <Page>
   <span slot="header">Text field</span>
   <span slot="description">

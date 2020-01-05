@@ -49,7 +49,21 @@
   section > div {
     margin-bottom: 40px;
   }
+
+  * :global(.mdc-tab .mdc-tab__icon, .mdc-tab .mdc-tab__text-label) {
+    color: var(--enabled-color);
+  }
+
+  *
+    :global(.mdc-tab--active .mdc-tab__icon, .mdc-tab--active
+      .mdc-tab__text-label) {
+    color: var(--mdc-theme-primary, #6200ee);
+  }
 </style>
+
+<svelte:head>
+  <title>Tab</title>
+</svelte:head>
 
 <Page>
   <span slot="header">Tab</span>

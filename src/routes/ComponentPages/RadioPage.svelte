@@ -11,11 +11,30 @@
   let selected5 = "RightLabel";
 </script>
 
-<!-- <style>
-  * :global(.mdc-form-field) {
-    color: var(--font-color);
+<style>
+  *
+    :global(.mdc-radio__native-control:disabled
+      + .mdc-radio__background
+      .mdc-radio__outer-circle, [aria-disabled="true"]
+      .mdc-radio__native-control
+      + .mdc-radio__background
+      .mdc-radio__outer-circle) {
+    border-color: var(--disabled-color);
   }
-</style> -->
+  *
+    :global(.mdc-radio__native-control:disabled
+      + .mdc-radio__background
+      .mdc-radio__inner-circle, [aria-disabled="true"]
+      .mdc-radio__native-control
+      + .mdc-radio__background
+      .mdc-radio__inner-circle) {
+    border-color: var(--disabled-color);
+  }
+</style>
+
+<svelte:head>
+  <title>Radio</title>
+</svelte:head>
 
 <Page>
   <span slot="header">Radio</span>

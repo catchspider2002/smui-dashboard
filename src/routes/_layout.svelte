@@ -103,12 +103,12 @@
     },
     {
       name: "Dropdown",
-      route: "/ComponentPages/DividerPage",
+      route: "/ComponentPages/MenuPage",
       indent: 0
     },
     {
       name: "Dialog",
-      route: "/ComponentPages/DividerPage",
+      route: "/ComponentPages/DialogPage",
       indent: 0
     },
     {
@@ -117,13 +117,8 @@
       indent: 0
     },
     {
-      name: "Tabs2",
-      route: "/ComponentPages/Tabs",
-      indent: 0
-    },
-    {
       name: "Chips",
-      route: "/ComponentPages/Chips",
+      route: "/ComponentPages/ChipPage",
       indent: 0
     }
   ];

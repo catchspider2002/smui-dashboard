@@ -21,6 +21,10 @@
   }
 </style> -->
 
+<svelte:head>
+  <title>Text area</title>
+</svelte:head>
+
 <Page>
   <span slot="header">Text area</span>
   <span slot="description">

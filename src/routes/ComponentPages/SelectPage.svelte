@@ -45,6 +45,10 @@
   }
 </style> -->
 
+<svelte:head>
+  <title>Select</title>
+</svelte:head>
+
 <Page>
   <span slot="header">Select</span>
   <span slot="description">
