@@ -5,6 +5,8 @@
   import Radio from "@smui/radio";
   import Slider from "@smui/slider";
   import FormField from "@smui/form-field";
+  import Page from "./Page.svelte";
+  import Example from "./Example.svelte";
 
   let simpleDialog;
   let eventDialog;
@@ -45,6 +47,31 @@
 <svelte:head>
   <title>Dialogs - SMUI</title>
 </svelte:head>
+
+Simple Dialog
+The Simple Dialog contains a list of potential actions. It does not contain buttons.
+
+Confirmation Dialog
+The Confirmation Dialog contains a list of choices, and buttons to confirm or cancel. Choices are accompanied by radio buttons (indicating single selection) or checkboxes (indicating multiple selection).
+
+
+<Page>
+  <span slot="header">Dialog</span>
+  <span slot="description">
+    Dialogs inform users about a task and can contain critical information, require decisions, or involve multiple tasks.
+  </span>
+  <span slot="import">
+    import Icon from "@smui/select/icon/index";
+    <br />
+    import HelperText from "@smui/select/helper-text/index";
+  </span>
+  <div slot="content">
+    <Example>
+      <span slot="header">Usage</span>
+      <div slot="vertical" class="mb-8" />
+    </Example>
+  </div>
+</Page>
 
 <section>
   <h2>Dialogs</h2>

@@ -1,6 +1,8 @@
 <script>
   import Chip, { Set, Icon, Checkmark, Text } from "@smui/chips";
   import Button, { Label } from "@smui/button";
+  import Page from "./Page.svelte";
+  import Example from "./Example.svelte";
 
   let choice = "Morning";
   let filter = ["Shoes", "Shirts"];

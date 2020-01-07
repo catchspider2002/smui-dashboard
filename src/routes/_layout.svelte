@@ -73,7 +73,7 @@
     },
     {
       name: "Card",
-      route: "/ComponentPages/Card",
+      route: "/ComponentPages/CardPage",
       indent: 0
     },
     {
@@ -102,7 +102,7 @@
       indent: 0
     },
     {
-      name: "Dropdown",
+      name: "Menu",
       route: "/ComponentPages/MenuPage",
       indent: 0
     },
