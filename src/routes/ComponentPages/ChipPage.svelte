@@ -35,95 +35,104 @@
   }
 </script>
 
+<style>
+  * :global(.mdc-chip, .mdc-chip:hover) {
+    color: var(--font-color);
+  }
+</style>
+
 <svelte:head>
   <title>Chip</title>
 </svelte:head>
 
-<section>
-  <h2>Chips</h2>
-
-  <div>
-    <Set chips={['one', 'two', 'three', 'four', 'five']} let:chip>
-      <Chip shouldRemoveOnTrailingIconClick={false}>
-        {#if chip === 'four'}
-          <Icon class="material-icons" leading>book</Icon>
-        {/if}
-        <Text>{chip}</Text>
-        {#if chip === 'five'}
-          <Icon class="material-icons" trailing>commute</Icon>
-        {/if}
-      </Chip>
-    </Set>
+<Page>
+  <span slot="header">Chip</span>
+  <span slot="description">
+    Chips are compact elements that allow users to enter information, select a
+    choice, filter content, or trigger an action.
+  </span>
+  <span slot="import">
+    import Icon from "@smui/select/icon/index";
+    <br />
+    import HelperText from "@smui/select/helper-text/index";
+  </span>
+  <div slot="content">
+    <Example>
+      <span slot="header">Leading icon</span>
+      <div slot="vertical" class="mb-8" />
+    </Example>
+    <Example>
+      <span slot="header">Trailing icon</span>
+      <div slot="vertical" class="mb-8" />
+    </Example>
+    <Example>
+      <span slot="header">Choice Chips</span>
+      <div slot="vertical" class="mb-8">
+        <Set
+          chips={['Morning', 'Afternoon', 'Evening', 'Night']}
+          let:chip
+          choice
+          bind:selected={choice}>
+          <Chip tabindex="0">{chip}</Chip>
+        </Set>
+      </div>
+    </Example>
+    <Example>
+      <span slot="header">Filter Chips</span>
+      <div slot="vertical" class="mb-8">
+        <Set
+          chips={['Shoes', 'Pants', 'Shirts', 'Hats']}
+          let:chip
+          filter
+          bind:selected={filter}>
+          <Chip tabindex="0">
+            <Checkmark />
+            <Text>{chip}</Text>
+          </Chip>
+        </Set>
+      </div>
+    </Example>
+    <Example>
+      <span slot="header">Input Chips</span>
+      <div slot="vertical" class="mb-8">
+        <Set chips={input} let:chip input>
+          <Chip>
+            <Text>{chip}</Text>
+            <Icon class="material-icons" trailing tabindex="0">cancel</Icon>
+          </Chip>
+        </Set>
+        <Button on:click={addInputChip}>
+          <Label>Add</Label>
+        </Button>
+      </div>
+    </Example>
+    <Example>
+      <span slot="header">Keyed Chips</span>
+      <div slot="vertical" class="mb-8">
+        <Set chips={keyed} let:chip key={chip => chip.k} input>
+          <Chip>
+            <Text>{chip.v}</Text>
+            <Icon class="material-icons" trailing tabindex="0">cancel</Icon>
+          </Chip>
+        </Set>
+        <Button on:click={addKeyedChip}>
+          <Label>Add</Label>
+        </Button>
+      </div>
+    </Example>
   </div>
+</Page>
 
-  <div>
-    Choice Chips
-    <Set
-      chips={['Morning', 'Afternoon', 'Evening', 'Night']}
-      let:chip
-      choice
-      bind:selected={choice}>
-      <Chip tabindex="0">{chip}</Chip>
-    </Set>
-  </div>
-
-  <div>
-    Programmatically select:
-    <Button on:click={() => (choice = 'Morning')}>
-      <Label>Morning</Label>
-    </Button>
-    <Button on:click={() => (choice = 'Afternoon')}>
-      <Label>Afternoon</Label>
-    </Button>
-    <Button on:click={() => (choice = 'Evening')}>
-      <Label>Evening</Label>
-    </Button>
-    <Button on:click={() => (choice = 'Night')}>
-      <Label>Night</Label>
-    </Button>
-  </div>
-
-  <pre class="status">Selected: {choice}</pre>
-
-  <div>
-    Filter Chips
-    <Set
-      chips={['Shoes', 'Pants', 'Shirts', 'Hats']}
-      let:chip
-      filter
-      bind:selected={filter}>
-      <Chip tabindex="0">
-        <Checkmark />
-        <Text>{chip}</Text>
-      </Chip>
-    </Set>
-  </div>
-
-  <pre class="status">Selected: {filter.join(', ')}</pre>
-
-  <div>
-    Input Chips
-    <Set chips={input} let:chip input>
-      <Chip>
-        <Text>{chip}</Text>
-        <Icon class="material-icons" trailing tabindex="0">cancel</Icon>
-      </Chip>
-    </Set>
-    <Button on:click={addInputChip}>
-      <Label>Add</Label>
-    </Button>
-  </div>
-
-  <div>
-    Keyed Chips
-    <Set chips={keyed} let:chip key={chip => chip.k} input>
-      <Chip>
-        <Text>{chip.v}</Text>
-        <Icon class="material-icons" trailing tabindex="0">cancel</Icon>
-      </Chip>
-    </Set>
-    <Button on:click={addKeyedChip}>
-      <Label>Add</Label>
-    </Button>
-  </div>
-</section>
+<div>
+  <Set chips={['one', 'two', 'three', 'four', 'five']} let:chip>
+    <Chip shouldRemoveOnTrailingIconClick={false}>
+      {#if chip === 'four'}
+        <Icon class="material-icons" leading>book</Icon>
+      {/if}
+      <Text>{chip}</Text>
+      {#if chip === 'five'}
+        <Icon class="material-icons" trailing>commute</Icon>
+      {/if}
+    </Chip>
+  </Set>
+</div>

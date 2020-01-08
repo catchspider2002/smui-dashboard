@@ -87,7 +87,7 @@
       </div>
     </Example>
     <Example>
-      <span slot="header">Multiple Lines</span>
+      <span slot="header">Multi-line</span>
       <div slot="vertical" class="mb-8">
 
         <div use:Anchor bind:this={anchor2}>

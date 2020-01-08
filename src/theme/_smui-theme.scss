@@ -34,9 +34,11 @@ $mdc-typography-font-family: var(--font-family);
     --font-color: hsl(0, 0%, 12.9%);
     --other-font-color: hsl(0, 0%, 0%);
     --bg-color: hsl(0, 0%, 100%);
+    --chip-bg-color: hsl(0, 0%, 85.1%);
     --bg-layer-color: hsl(0, 0%, 96.1%);
     --bg-card-color: hsl(0, 0%, 100%);
     --enabled-color: hsl(0, 0%, 45.9%);
+    // --alternate-gray-color: hsl(0, 0%, 45.9%);
     --disabled-color: hsl(0, 0%, 74.1%);
     --switch-toggle-color: hsl(0, 0%, 98%);
     --switch-track-color: hsl(0, 0%, 30%);
@@ -61,6 +63,7 @@ $mdc-typography-font-family: var(--font-family);
     --font-color: hsl(0, 0%, 87.1%);
     --other-font-color: hsl(0, 0%, 100%);
     --bg-color: hsl(0, 0%, 7.1%);
+    --chip-bg-color: hsl(0, 0%, 30%);
     --bg-layer-color: hsl(0, 0%, 20%);
     --bg-card-color: hsl(0, 0%, 25.9%);
     --enabled-color: hsl(0, 0%, 70.2%);
@@ -119,7 +122,7 @@ $mdc-radio-baseline-theme-color: primary !default;
     color: var(--font-color);
 }
 
-//Checkbox
+// Checkbox
 $mdc-checkbox-border-color: var(--enabled-color);
 $mdc-checkbox-disabled-color: var(--disabled-color);
 $mdc-checkbox-baseline-theme-color: primary !default;
@@ -184,10 +187,17 @@ $mdc-menu-ink-color: var(--font-color);
 
 // Dialog
 
-$mdc-dialog-scrim-color: red;
-$mdc-dialog-title-ink-color: green;
-$mdc-dialog-content-ink-color: orange;
-$mdc-dialog-scroll-divider-color: purple;
+$mdc-dialog-scrim-color: black;
+$mdc-dialog-title-ink-color: var(--font-color);
+$mdc-dialog-scrim-opacity: 0.52 !default;
+$mdc-dialog-title-ink-opacity: 1 !default;
+
+// Chip
+
+$mdc-chip-fill-color-default: var(--chip-bg-color);
+// $mdc-chip-ink-color-default: var(--font-color);
+
+$mdc-chip-icon-color: var(--enabled-color);
 
 .mdc-button--raised:disabled,
 .mdc-button--unelevated:disabled {
