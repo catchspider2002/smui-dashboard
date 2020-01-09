@@ -36,8 +36,23 @@
 </script>
 
 <style>
-  * :global(.mdc-chip, .mdc-chip:hover) {
+  *
+    :global(.mdc-chip, .mdc-chip-set--choice
+      .mdc-chip.mdc-chip--selected, .mdc-chip-set--choice
+      .mdc-chip.mdc-chip--selected:hover) {
     color: var(--font-color);
+  }
+
+  * :global(.mdc-chip__icon--leading, .mdc-chip__icon--trailing) {
+    color: var(--enabled-color);
+  }
+
+  * :global(.mdc-chip__checkmark-path) {
+    stroke: var(--enabled-color);
+  }
+
+  * :global(.mdc-chip-set--choice .mdc-chip--selected, .mdc-chip--selected) {
+    background-color: var(--primary-alt-color);
   }
 </style>
 
@@ -59,11 +74,21 @@
   <div slot="content">
     <Example>
       <span slot="header">Leading icon</span>
-      <div slot="vertical" class="mb-8" />
+      <div slot="vertical" class="mb-8">
+        <Chip>
+          <Icon class="material-icons" leading>book</Icon>
+          <Text>Leading Icon</Text>
+        </Chip>
+      </div>
     </Example>
     <Example>
       <span slot="header">Trailing icon</span>
-      <div slot="vertical" class="mb-8" />
+      <div slot="vertical" class="mb-8">
+        <Chip shouldRemoveOnTrailingIconClick={false}>
+          <Text>Trailing Icon</Text>
+          <Icon class="material-icons" trailing>commute</Icon>
+        </Chip>
+      </div>
     </Example>
     <Example>
       <span slot="header">Choice Chips</span>
@@ -122,17 +147,3 @@
     </Example>
   </div>
 </Page>
-
-<div>
-  <Set chips={['one', 'two', 'three', 'four', 'five']} let:chip>
-    <Chip shouldRemoveOnTrailingIconClick={false}>
-      {#if chip === 'four'}
-        <Icon class="material-icons" leading>book</Icon>
-      {/if}
-      <Text>{chip}</Text>
-      {#if chip === 'five'}
-        <Icon class="material-icons" trailing>commute</Icon>
-      {/if}
-    </Chip>
-  </Set>
-</div>

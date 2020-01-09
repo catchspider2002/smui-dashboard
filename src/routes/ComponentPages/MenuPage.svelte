@@ -42,28 +42,6 @@
     <Example>
       <span slot="header">Usage</span>
       <div slot="vertical" class="mb-8">
-        <Menu static>
-          <List>
-            <Item on:SMUI:action={() => (clicked = 'Cut')}>
-              <Text>Cut</Text>
-            </Item>
-            <Item on:SMUI:action={() => (clicked = 'Copy')}>
-              <Text>Copy</Text>
-            </Item>
-            <Item on:SMUI:action={() => (clicked = 'Paste')}>
-              <Text>Paste</Text>
-            </Item>
-            <Separator />
-            <Item on:SMUI:action={() => (clicked = 'Delete')}>
-              <Text>Delete</Text>
-            </Item>
-          </List>
-        </Menu>
-      </div>
-    </Example>
-    <Example>
-      <span slot="header">Automatic Anchor</span>
-      <div slot="vertical" class="mb-8">
         <div>
           <Button on:click={() => menu.setOpen(true)}>Open Menu</Button>
           <Menu bind:this={menu}>

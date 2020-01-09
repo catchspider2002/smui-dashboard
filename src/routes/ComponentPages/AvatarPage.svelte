@@ -24,51 +24,91 @@
   <div slot="content">
     <Example>
       <span slot="header">Image Avatar (Circle)</span>
-      <div slot="horizontal" class="mb-8">
+      <div slot="horizontal" class="mr-8 mb-8">
         <Avatar image={imageSource} size="xs" />
+      </div>
+      <div slot="horizontal" class="mr-8 mb-8">
         <Avatar image={imageSource} size="sm" />
+      </div>
+      <div slot="horizontal" class="mr-8 mb-8">
         <Avatar image={imageSource} />
+      </div>
+      <div slot="horizontal" class="mr-8 mb-8">
         <Avatar image={imageSource} size="lg" />
+      </div>
+      <div slot="horizontal" class="mr-8 mb-8">
         <Avatar image={imageSource} size="xl" />
       </div>
     </Example>
     <Example>
       <span slot="header">Image Avatar (Rounded)</span>
-      <div slot="horizontal" class="mb-8">
+      <div slot="horizontal" class="mr-8 mb-8">
         <Avatar image={imageSource} size="xs" shape="square" />
+      </div>
+      <div slot="horizontal" class="mr-8 mb-8">
         <Avatar image={imageSource} size="sm" shape="square" />
+      </div>
+      <div slot="horizontal" class="mr-8 mb-8">
         <Avatar image={imageSource} shape="square" />
+      </div>
+      <div slot="horizontal" class="mr-8 mb-8">
         <Avatar image={imageSource} size="lg" shape="square" />
+      </div>
+      <div slot="horizontal" class="mr-8 mb-8">
         <Avatar image={imageSource} size="xl" shape="square" />
       </div>
     </Example>
     <Example>
       <span slot="header">Letter Avatar (Circle)</span>
-      <div slot="horizontal" class="mb-8">
+      <div slot="horizontal" class="mr-8 mb-8">
         <Avatar letter="TS" size="xs" color="default" />
+      </div>
+      <div slot="horizontal" class="mr-8 mb-8">
         <Avatar letter="TS" size="sm" color="default" />
+      </div>
+      <div slot="horizontal" class="mr-8 mb-8">
         <Avatar letter="TS" color="primary" />
+      </div>
+      <div slot="horizontal" class="mr-8 mb-8">
         <Avatar letter="TS" size="lg" color="secondary" />
+      </div>
+      <div slot="horizontal" class="mr-8 mb-8">
         <Avatar letter="TS" size="xl" color="secondary" />
       </div>
     </Example>
     <Example>
       <span slot="header">Letter Avatar (Rounded)</span>
-      <div slot="horizontal" class="mb-8">
+      <div slot="horizontal" class="mr-8 mb-8">
         <Avatar letter="TS" size="xs" shape="square" color="default" />
+      </div>
+      <div slot="horizontal" class="mr-8 mb-8">
         <Avatar letter="TS" size="sm" shape="square" color="default" />
+      </div>
+      <div slot="horizontal" class="mr-8 mb-8">
         <Avatar letter="TS" shape="square" color="primary" />
+      </div>
+      <div slot="horizontal" class="mr-8 mb-8">
         <Avatar letter="TS" size="lg" shape="square" color="secondary" />
+      </div>
+      <div slot="horizontal" class="mr-8 mb-8">
         <Avatar letter="TS" size="xl" shape="square" color="secondary" />
       </div>
     </Example>
     <Example>
       <span slot="header">Icon Avatar (Circle)</span>
-      <div slot="horizontal" class="mb-8">
+      <div slot="horizontal" class="mr-8 mb-8">
         <Avatar icon="AB" size="xs" color="default" />
+      </div>
+      <div slot="horizontal" class="mr-8 mb-8">
         <Avatar icon="AB" size="sm" color="default" />
+      </div>
+      <div slot="horizontal" class="mr-8 mb-8">
         <Avatar icon="P" color="primary" />
+      </div>
+      <div slot="horizontal" class="mr-8 mb-8">
         <Avatar icon="TS" size="lg" color="secondary" />
+      </div>
+      <div slot="horizontal" class="mr-8 mb-8">
         <Avatar icon="TS" size="xl" color="secondary" />
       </div>
     </Example>

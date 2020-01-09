@@ -1,6 +1,6 @@
 <script>
-  // import * as THEME from "./Variables.svelte";
-  import Icon from "./Icon.svelte";
+  // import IconSVG from "./Icon.svelte";
+  import IconButton, { Icon } from "@smui/icon-button";
   export let shape = "circle"; // circle | square
   export let size = "md"; // xs | sm | md | lg | xl
   export let image;
@@ -38,10 +38,16 @@
     iconMargin = "mx-3";
   } else textClass = "text-base font-semibold ";
 
-  if (shape != "square") shapeClass = "rounded-full";
+  colorClass = "avatar-" + color;
 
-  // colorClass = THEME["BG_" + newColor] + " " + THEME["BG_TEXT_" + newColor];
+  if (shape != "square") shapeClass = "rounded-full";
 </script>
+
+<style>
+  * :global(.material-icons) {
+    font-size: unset;
+  }
+</style>
 
 {#if image}
   <img
@@ -55,10 +61,12 @@
     class="{margin}
     {sizeClass}
     {textClass}
+    {colorClass}
     {shapeClass} flex items-center justify-center">
     {#if letter}{letter}{/if}
     {#if icon}
-      <Icon size={iconSize} margin={iconMargin} />
+      <!-- <IconSVG size={iconSize} margin={iconMargin} /> -->
+      <Icon class="material-icons">filter_drama</Icon>
     {/if}
   </div>
 {/if}

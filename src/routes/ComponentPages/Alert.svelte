@@ -10,23 +10,6 @@
   let borderClass,
     variantClass = "alert-" + variant;
 
-  // switch (variant) {
-  //   case "solid":
-  //     variantClass = solidBgColor + " " + solidTextColor;
-  //     break;
-  //   case "outline":
-  //     variantClass =
-  //       outlineBgColor +
-  //       " border " +
-  //       outlineBorderColor +
-  //       " " +
-  //       outlineTextColor;
-  //     break;
-  //   default:
-  //     variantClass = defaultBgColor;
-  //     break;
-  // }
-
   if (variant == "outline") variantClass += " border border-solid ";
 
   if (border) {

@@ -25,9 +25,20 @@ $mdc-typography-font-family: var(--font-family);
     --secondary-700: #c53030;
     --secondary-800: #9b2c2c;
     --secondary-900: #742a2a;
+    --gray-100: #f7fafc;
+    --gray-200: #edf2f7;
+    --gray-300: #e2e8f0;
+    --gray-400: #cbd5e0;
+    --gray-500: #a0aec0;
+    --gray-600: #718096;
+    --gray-700: #4a5568;
+    --gray-800: #2d3748;
+    --gray-900: #1a202c;
 
     --primary-color: var(--primary-700);
     --secondary-color: var(--secondary-700);
+    --primary-alt-color: var(--primary-200);
+    --secondary-alt-color: var(--secondary-200);
     --primary-font-color: hsl(0, 0%, 100%);
     --secondary-font-color: hsl(0, 0%, 100%);
     --disabled-button-bg-color: hsl(0, 0%, 87.8%);
@@ -52,11 +63,18 @@ $mdc-typography-font-family: var(--font-family);
     --alert-outline-border-color: var(--primary-400);
     --alert-outline-border-color2: var(--primary-600);
     --alert-outline-text-color: var(--primary-800);
+
+    --avatar-default-bg-color: var(--gray-300);
+    --avatar-primary-bg-color: var(--primary-200);
+    --avatar-secondary-bg-color: var(--secondary-200);
+    --avatar-text-color: var(--font-color);
 }
 
 [data-theme="dark"] {
     --primary-color: var(--primary-400);
     --secondary-color: var(--secondary-400);
+    --primary-alt-color: var(--primary-800);
+    --secondary-alt-color: var(--secondary-800);
     --primary-font-color: hsl(0, 0%, 0%);
     --secondary-font-color: hsl(0, 0%, 0%);
     --disabled-button-bg-color: hsl(0, 0%, 12.2%);
@@ -78,6 +96,10 @@ $mdc-typography-font-family: var(--font-family);
     --alert-outline-border-color: var(--primary-600);
     --alert-outline-border-color2: var(--primary-400);
     --alert-outline-text-color: var(--primary-200);
+    
+    --avatar-default-bg-color: var(--gray-700);
+    --avatar-primary-bg-color: var(--primary-800);
+    --avatar-secondary-bg-color: var(--secondary-800);
 }
 
 body {
@@ -197,8 +219,6 @@ $mdc-dialog-title-ink-opacity: 1 !default;
 $mdc-chip-fill-color-default: var(--chip-bg-color);
 // $mdc-chip-ink-color-default: var(--font-color);
 
-$mdc-chip-icon-color: var(--enabled-color);
-
 .mdc-button--raised:disabled,
 .mdc-button--unelevated:disabled {
     background-color: var(--disabled-button-bg-color);
@@ -258,6 +278,18 @@ $mdc-chip-icon-color: var(--enabled-color);
     background-color: var(--alert-outline-bg-color);
     border-color: var(--alert-outline-border-color2);
     color: var(--alert-outline-text-color);
+}
+
+// Avatar
+
+.avatar-default{
+    background-color: var(--avatar-default-bg-color);
+}
+.avatar-primary{
+    background-color: var(--avatar-primary-bg-color);
+}
+.avatar-secondary{
+    background-color: var(--avatar-secondary-bg-color);
 }
 
 // Appbar
