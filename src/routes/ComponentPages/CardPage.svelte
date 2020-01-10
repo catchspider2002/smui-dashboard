@@ -53,6 +53,28 @@
   <title>Card</title>
 </svelte:head>
 
+<Page>
+  <span slot="header">Card</span>
+  <span slot="description">
+    Cards contain content and actions about a single subject.
+  </span>
+  <span slot="import">
+    import Icon from "@smui/select/icon/index";
+    <br />
+    import HelperText from "@smui/select/helper-text/index";
+  </span>
+  <div slot="content">
+    <Example>
+      <span slot="header">Usage</span>
+      <div slot="vertical" class="mb-8" />
+    </Example>
+    <Example>
+      <span slot="header">Outlined Card</span>
+      <div slot="vertical" class="mb-8" />
+    </Example>
+  </div>
+</Page>
+
 <section>
   <h2>Cards</h2>
 

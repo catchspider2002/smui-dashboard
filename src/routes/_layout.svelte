@@ -27,13 +27,58 @@
       indent: 0
     },
     {
+      name: "Avatar",
+      route: "/ComponentPages/AvatarPage",
+      indent: 1
+    },
+    {
       name: "Button",
       route: "/ComponentPages/ButtonPage",
       indent: 0
     },
     {
+      name: "Card",
+      route: "/ComponentPages/CardPage",
+      indent: 1
+    },
+    {
       name: "Checkbox",
       route: "/ComponentPages/CheckboxPage",
+      indent: 0
+    },
+    {
+      name: "Chip",
+      route: "/ComponentPages/ChipPage",
+      indent: 0
+    },
+    {
+      name: "Dialog",
+      route: "/ComponentPages/DialogPage",
+      indent: 0
+    },
+    {
+      name: "Divider",
+      route: "/ComponentPages/DividerPage",
+      indent: 0
+    },
+    {
+      name: "Drawer",
+      route: "/ComponentPages/DrawerPage",
+      indent: 2
+    },
+    {
+      name: "Linear Progress",
+      route: "/ComponentPages/ChipPage",
+      indent: 2
+    },
+    {
+      name: "List",
+      route: "/ComponentPages/ListPage",
+      indent: 2
+    },
+    {
+      name: "Menu",
+      route: "/ComponentPages/MenuPage",
       indent: 0
     },
     {
@@ -52,9 +97,19 @@
       indent: 0
     },
     {
+      name: "Snackbar",
+      route: "/ComponentPages/SnackbarPage",
+      indent: 2
+    },
+    {
       name: "Switch",
       route: "/ComponentPages/SwitchPage",
       indent: 0
+    },
+    {
+      name: "Tab",
+      route: "/ComponentPages/TabPage",
+      indent: 1
     },
     {
       name: "Table",
@@ -72,54 +127,34 @@
       indent: 0
     },
     {
-      name: "Card",
-      route: "/ComponentPages/CardPage",
-      indent: 0
+      name: "Accordion (PRO)",
+      route: "/ComponentPages/Accordion",
+      indent: 2
     },
     {
-      name: "Dashboard",
-      route: "/ComponentPages/Dashboard",
-      indent: 0
+      name: "Badge (PRO)",
+      route: "/ComponentPages/ChipPage",
+      indent: 2
+    },
+    {
+      name: "Rating (PRO)",
+      route: "/ComponentPages/ChipPage",
+      indent: 2
     },
     {
       name: "Timeline (PRO)",
       route: "/ComponentPages/Timeline",
-      indent: 0
+      indent: 2
     },
     {
-      name: "Accordion (PRO)",
-      route: "/ComponentPages/Accordion",
-      indent: 0
-    },
-    {
-      name: "Avatar",
-      route: "/ComponentPages/AvatarPage",
-      indent: 0
-    },
-    {
-      name: "Divider",
-      route: "/ComponentPages/DividerPage",
-      indent: 0
-    },
-    {
-      name: "Menu",
-      route: "/ComponentPages/MenuPage",
-      indent: 0
-    },
-    {
-      name: "Dialog",
-      route: "/ComponentPages/DialogPage",
-      indent: 0
-    },
-    {
-      name: "Tabs",
-      route: "/ComponentPages/TabPage",
-      indent: 0
-    },
-    {
-      name: "Chips",
+      name: "Tooltip (PRO)",
       route: "/ComponentPages/ChipPage",
-      indent: 0
+      indent: 2
+    },
+    {
+      name: "Dashboard",
+      route: "/ComponentPages/Dashboard",
+      indent: 2
     }
   ];
 
@@ -157,6 +192,7 @@
 </script>
 
 <style>
+
 </style>
 
 <svelte:window on:resize={setMiniWindow} />
@@ -219,7 +255,8 @@
           <Section>
             {#if miniWindow}
               <IconButton
-                class="material-icons" style="color: var(--font-color);"
+                class="material-icons"
+                style="color: var(--font-color);"
                 on:click={() => (drawerOpen = !drawerOpen)}>
                 menu
               </IconButton>
