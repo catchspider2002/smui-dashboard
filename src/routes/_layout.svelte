@@ -68,7 +68,7 @@
     },
     {
       name: "Linear Progress",
-      route: "/ComponentPages/ChipPage",
+      route: "/ComponentPages/LinearProgressPage",
       indent: 2
     },
     {
@@ -133,12 +133,12 @@
     },
     {
       name: "Badge (PRO)",
-      route: "/ComponentPages/ChipPage",
+      route: "/ComponentPages/BadgePage",
       indent: 2
     },
     {
       name: "Rating (PRO)",
-      route: "/ComponentPages/ChipPage",
+      route: "/ComponentPages/RatingPage",
       indent: 2
     },
     {
@@ -148,7 +148,7 @@
     },
     {
       name: "Tooltip (PRO)",
-      route: "/ComponentPages/ChipPage",
+      route: "/ComponentPages/TooltipPage",
       indent: 2
     },
     {

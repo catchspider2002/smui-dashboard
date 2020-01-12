@@ -68,6 +68,7 @@ $mdc-typography-font-family: var(--font-family);
     --avatar-primary-bg-color: var(--primary-200);
     --avatar-secondary-bg-color: var(--secondary-200);
     --avatar-text-color: var(--font-color);
+    $mdc-linear-progress-baseline-buffer-color: hsl(0, 0%, 85.1%);
 }
 
 [data-theme="dark"] {
@@ -81,7 +82,6 @@ $mdc-typography-font-family: var(--font-family);
     --font-color: hsl(0, 0%, 87.1%);
     --other-font-color: hsl(0, 0%, 100%);
     --bg-color: hsl(0, 0%, 7.1%);
-    --chip-bg-color: hsl(0, 0%, 30%);
     --bg-layer-color: hsl(0, 0%, 20%);
     --bg-card-color: hsl(0, 0%, 25.9%);
     --enabled-color: hsl(0, 0%, 70.2%);
@@ -96,10 +96,11 @@ $mdc-typography-font-family: var(--font-family);
     --alert-outline-border-color: var(--primary-600);
     --alert-outline-border-color2: var(--primary-400);
     --alert-outline-text-color: var(--primary-200);
-    
+
     --avatar-default-bg-color: var(--gray-700);
     --avatar-primary-bg-color: var(--primary-800);
     --avatar-secondary-bg-color: var(--secondary-800);
+    $mdc-linear-progress-baseline-buffer-color: hsl(0, 0%, 30%);
 }
 
 body {
@@ -214,6 +215,8 @@ $mdc-dialog-title-ink-color: var(--font-color);
 $mdc-dialog-scrim-opacity: 0.52 !default;
 $mdc-dialog-title-ink-opacity: 1 !default;
 
+// Linear Progress
+
 // Chip
 
 $mdc-chip-fill-color-default: var(--chip-bg-color);
@@ -282,13 +285,13 @@ $mdc-chip-fill-color-default: var(--chip-bg-color);
 
 // Avatar
 
-.avatar-default{
+.avatar-default {
     background-color: var(--avatar-default-bg-color);
 }
-.avatar-primary{
+.avatar-primary {
     background-color: var(--avatar-primary-bg-color);
 }
-.avatar-secondary{
+.avatar-secondary {
     background-color: var(--avatar-secondary-bg-color);
 }
 
