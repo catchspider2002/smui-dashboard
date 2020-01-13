@@ -18,10 +18,17 @@
     if (border == "top") borderClass += " border-solid border-t-4";
     else if (border == "left") borderClass += " border-solid border-l-4";
   }
+
+  let hideClass;
+  function closeAlert() {
+    console.log("Alert to close");
+    hideClass = "hidden";
+  }
 </script>
 
 <div
   class="{variantClass}
+  {hideClass}
   {borderClass} py-2 rounded relative flex items-center"
   role="alert">
   <slot />
@@ -34,7 +41,9 @@
     </div>
   </div>
   <div class="pr-4 py-1">
-    <IconButton class="material-icons" title="Dismiss">close</IconButton>
+    <IconButton class="material-icons" title="Dismiss" on:click={closeAlert}>
+      close
+    </IconButton>
   </div>
   <!-- <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
     <IconButton class="material-icons" title="Dismiss">close</IconButton>

@@ -29,7 +29,7 @@
     {
       name: "Avatar",
       route: "/ComponentPages/AvatarPage",
-      indent: 1
+      indent: 0
     },
     {
       name: "Button",
@@ -69,12 +69,12 @@
     {
       name: "Linear Progress",
       route: "/ComponentPages/LinearProgressPage",
-      indent: 2
+      indent: 0
     },
     {
       name: "List",
       route: "/ComponentPages/ListPage",
-      indent: 2
+      indent: 0
     },
     {
       name: "Menu",

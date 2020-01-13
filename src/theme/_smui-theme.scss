@@ -51,6 +51,7 @@ $mdc-typography-font-family: var(--font-family);
     --enabled-color: hsl(0, 0%, 45.9%);
     // --alternate-gray-color: hsl(0, 0%, 45.9%);
     --disabled-color: hsl(0, 0%, 74.1%);
+    --disabled-font-color: hsl(0, 0%, 80%);
     --switch-toggle-color: hsl(0, 0%, 98%);
     --switch-track-color: hsl(0, 0%, 30%);
     --font-family: "Montserrat", sans-serif;
@@ -82,10 +83,12 @@ $mdc-typography-font-family: var(--font-family);
     --font-color: hsl(0, 0%, 87.1%);
     --other-font-color: hsl(0, 0%, 100%);
     --bg-color: hsl(0, 0%, 7.1%);
+    --chip-bg-color: hsl(0, 0%, 30%);
     --bg-layer-color: hsl(0, 0%, 20%);
     --bg-card-color: hsl(0, 0%, 25.9%);
     --enabled-color: hsl(0, 0%, 70.2%);
     --disabled-color: hsl(0, 0%, 30.2%);
+    --disabled-font-color: hsl(0, 0%, 40%);
     --switch-toggle-color: hsl(0, 0%, 70%);
     --switch-track-color: hsl(0, 0%, 100%);
     --filter: invert(100%);
@@ -215,7 +218,15 @@ $mdc-dialog-title-ink-color: var(--font-color);
 $mdc-dialog-scrim-opacity: 0.52 !default;
 $mdc-dialog-title-ink-opacity: 1 !default;
 
-// Linear Progress
+// List
+.mdc-list-item__graphic,
+.mdc-list-item__meta {
+    color: var(--font-color);
+}
+
+.mdc-list-item--disabled {
+    color: var(--disabled-font-color);
+}
 
 // Chip
 
