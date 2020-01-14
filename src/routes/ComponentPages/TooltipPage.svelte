@@ -10,8 +10,7 @@
 <Page>
   <span slot="header">Tooltip</span>
   <span slot="description">
-    A menu displays a list of choices on a temporary surface. They appear when
-    users interact with a button, action, or other control.
+    Tooltips display informative text when users hover over, focus on, or tap an element.
   </span>
   <span slot="import">
     import Icon from "@smui/select/icon/index";

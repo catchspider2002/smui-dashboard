@@ -10,8 +10,7 @@
 <Page>
   <span slot="header">Badge</span>
   <span slot="description">
-    A menu displays a list of choices on a temporary surface. They appear when
-    users interact with a button, action, or other control.
+    Badge generates a small badge to the top-right or bottom-right of its children.
   </span>
   <span slot="import">
     import Icon from "@smui/select/icon/index";

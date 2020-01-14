@@ -60,7 +60,7 @@
 <Page>
   <span slot="header">Snackbar</span>
   <span slot="description">
-    A snackbar is used to display a quick message to a user
+    A snackbar is used to display a quick message to a user.
   </span>
   <span slot="import">
     import Icon from "@smui/select/icon/index";

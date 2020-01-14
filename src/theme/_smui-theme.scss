@@ -69,6 +69,8 @@ $mdc-typography-font-family: var(--font-family);
     --avatar-primary-bg-color: var(--primary-200);
     --avatar-secondary-bg-color: var(--secondary-200);
     --avatar-text-color: var(--font-color);
+    --card-background-16-9: url(https://via.placeholder.com/320x180.png?text=16x9);
+    --card-background-square: url(https://via.placeholder.com/320x320.png?text=square);
     $mdc-linear-progress-baseline-buffer-color: hsl(0, 0%, 85.1%);
 }
 
@@ -103,6 +105,7 @@ $mdc-typography-font-family: var(--font-family);
     --avatar-default-bg-color: var(--gray-700);
     --avatar-primary-bg-color: var(--primary-800);
     --avatar-secondary-bg-color: var(--secondary-800);
+    --card-background-16-9: url(https://via.placeholder.com/320x180.png/505050/808080?text=16x9);
     $mdc-linear-progress-baseline-buffer-color: hsl(0, 0%, 30%);
 }
 

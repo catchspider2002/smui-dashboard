@@ -44,8 +44,7 @@
 <Page>
   <span slot="header">Linear Progress</span>
   <span slot="description">
-    A menu displays a list of choices on a temporary surface. They appear when
-    users interact with a button, action, or other control.
+    Linear Progress indicators display the length of a process or express an unspecified wait time.
   </span>
   <span slot="import">
     import Icon from "@smui/select/icon/index";

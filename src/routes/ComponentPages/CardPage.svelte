@@ -38,14 +38,15 @@
 
   * :global(.mdc-card) {
     background-color: var(--bg-card-color);
+    min-width: 360px;
   }
 
   * :global(.card-media-16x9) {
-    background-image: url(https://via.placeholder.com/320x180.png?text=16x9);
+    background-image: var(--card-background-16-9);
   }
 
   * :global(.card-media-square) {
-    background-image: url(https://via.placeholder.com/320x320.png?text=square);
+    background-image: var(--card-background-square);
   }
 
   * :global(.mdc-card__action--icon:not(:disabled)) {

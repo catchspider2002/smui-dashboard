@@ -1,7 +1,10 @@
 <script>
   import TimelineElement from "./TimelineElement.svelte";
   // Reference: https://assortment.io/posts/building-responsive-timelines-in-css-sass-bem
+  import Page from "./Page.svelte";
+  import Example from "./Example.svelte";
 </script>
+
 
 <style>
   .timeline:before {
@@ -24,8 +27,27 @@
 </style>
 
 <svelte:head>
-  <title>Timeline</title>
+  <title>Timeline - SMUI</title>
 </svelte:head>
+
+<Page>
+  <span slot="header">Timeline</span>
+  <span slot="description">
+    A timeline is useful for stylistically displaying chronological information.
+  </span>
+  <span slot="import">
+    import Icon from "@smui/select/icon/index";
+    <br />
+    import HelperText from "@smui/select/helper-text/index";
+  </span>
+  <div slot="content">
+    <Example>
+      <span slot="header">Usage</span>
+      <div slot="vertical" class="mb-8">
+      </div>
+    </Example>
+  </div>
+</Page>
 
 <div class="mx-auto p-8 max-w-6xl bg-gray-300">
   <h1 class="pb-8 text-xl text-center text-black">WORK EXPERIENCE</h1>

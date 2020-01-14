@@ -10,8 +10,7 @@
 <Page>
   <span slot="header">Rating</span>
   <span slot="description">
-    A menu displays a list of choices on a temporary surface. They appear when
-    users interact with a button, action, or other control.
+    Ratings provide insight regarding others’ opinions and experiences with a product.
   </span>
   <span slot="import">
     import Icon from "@smui/select/icon/index";
