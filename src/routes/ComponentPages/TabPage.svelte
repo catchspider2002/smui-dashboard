@@ -106,13 +106,6 @@
         <Label>{tab.label}</Label>
       </Tab>
     </TabBar>
-    <!-- <Example> -->
-    <div class="text-base font-semibold py-4">Scrolling Tabs</div>
-    <TabBar tabs={[...Array(20)].map((v, i) => i + 1)} let:tab>
-      <Tab {tab}>
-        <Label>Tab {tab}</Label>
-      </Tab>
-    </TabBar>
     <div class="text-base font-semibold py-4">Minimum Width Labels</div>
     <TabBar tabs={['Home', 'Merchandise', 'About Us']} let:tab>
       <Tab {tab} minWidth>

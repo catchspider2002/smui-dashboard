@@ -39,6 +39,7 @@ $mdc-typography-font-family: var(--font-family);
     --secondary-color: var(--secondary-700);
     --primary-alt-color: var(--primary-200);
     --secondary-alt-color: var(--secondary-200);
+    --primary-snackbar-color: var(--primary-400);
     --primary-font-color: hsl(0, 0%, 100%);
     --secondary-font-color: hsl(0, 0%, 100%);
     --disabled-button-bg-color: hsl(0, 0%, 87.8%);
@@ -69,8 +70,6 @@ $mdc-typography-font-family: var(--font-family);
     --avatar-primary-bg-color: var(--primary-200);
     --avatar-secondary-bg-color: var(--secondary-200);
     --avatar-text-color: var(--font-color);
-    --card-background-16-9: url(https://via.placeholder.com/320x180.png?text=16x9);
-    --card-background-square: url(https://via.placeholder.com/320x320.png?text=square);
     $mdc-linear-progress-baseline-buffer-color: hsl(0, 0%, 85.1%);
 }
 
@@ -79,6 +78,7 @@ $mdc-typography-font-family: var(--font-family);
     --secondary-color: var(--secondary-400);
     --primary-alt-color: var(--primary-800);
     --secondary-alt-color: var(--secondary-800);
+    --primary-snackbar-color: var(--primary-700);
     --primary-font-color: hsl(0, 0%, 0%);
     --secondary-font-color: hsl(0, 0%, 0%);
     --disabled-button-bg-color: hsl(0, 0%, 12.2%);
@@ -105,7 +105,6 @@ $mdc-typography-font-family: var(--font-family);
     --avatar-default-bg-color: var(--gray-700);
     --avatar-primary-bg-color: var(--primary-800);
     --avatar-secondary-bg-color: var(--secondary-800);
-    --card-background-16-9: url(https://via.placeholder.com/320x180.png/505050/808080?text=16x9);
     $mdc-linear-progress-baseline-buffer-color: hsl(0, 0%, 30%);
 }
 
@@ -222,6 +221,7 @@ $mdc-dialog-scrim-opacity: 0.52 !default;
 $mdc-dialog-title-ink-opacity: 1 !default;
 
 // List
+.mdc-drawer .mdc-list-item,
 .mdc-list-item__graphic,
 .mdc-list-item__meta {
     color: var(--font-color);
@@ -230,6 +230,13 @@ $mdc-dialog-title-ink-opacity: 1 !default;
 .mdc-list-item--disabled {
     color: var(--disabled-font-color);
 }
+
+// Snackbar
+
+$mdc-snackbar-fill-color: var(--other-font-color); // mix(mdc-theme-prop-value(on-surface), mdc-theme-prop-value(surface), 80%) !default;
+$mdc-snackbar-label-ink-color: var(--primary-font-color);
+// $mdc-snackbar-action-ink-color: var(--primary-color);
+// $mdc-snackbar-dismiss-ink-color: var(--primary-font-color);
 
 // Chip
 

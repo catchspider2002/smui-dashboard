@@ -22,6 +22,10 @@
 
   const sections = [
     {
+      name: "COMPONENTS",
+      indent: 0
+    },
+    {
       name: "Alert",
       route: "/ComponentPages/AlertPage",
       indent: 0
@@ -39,7 +43,7 @@
     {
       name: "Card",
       route: "/ComponentPages/CardPage",
-      indent: 1
+      indent: 0
     },
     {
       name: "Checkbox",
@@ -64,7 +68,7 @@
     {
       name: "Drawer",
       route: "/ComponentPages/DrawerPage",
-      indent: 2
+      indent: 0
     },
     {
       name: "Linear Progress",
@@ -99,7 +103,7 @@
     {
       name: "Snackbar",
       route: "/ComponentPages/SnackbarPage",
-      indent: 2
+      indent: 0
     },
     {
       name: "Switch",
@@ -109,7 +113,7 @@
     {
       name: "Tab",
       route: "/ComponentPages/TabPage",
-      indent: 1
+      indent: 0
     },
     {
       name: "Table",

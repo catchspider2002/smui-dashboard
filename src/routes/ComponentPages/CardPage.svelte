@@ -22,14 +22,12 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    min-height: 400px;
+    /* min-height: 400px; */
     min-width: 380px;
     background-color: var(--bg-layer-color);
-    margin-right: 20px;
+    /* margin-right: 20px; */
     margin-bottom: 20px;
-  }
-  .card-container.short {
-    min-height: 200px;
+    padding: 40px 0;
   }
 
   * :global(.mdc-card--outlined) {
@@ -42,11 +40,11 @@
   }
 
   * :global(.card-media-16x9) {
-    background-image: var(--card-background-16-9);
+    background-image: url(https://via.placeholder.com/320x180.png/606060/808080?text=16x9);
   }
 
   * :global(.card-media-square) {
-    background-image: var(--card-background-square);
+    background-image: url(https://via.placeholder.com/320x320.png/606060/808080?text=square);
   }
 
   * :global(.mdc-card__action--icon:not(:disabled)) {
@@ -72,10 +70,15 @@
     <Example>
       <span slot="header">Usage</span>
       <div slot="vertical" class="mb-8">
-        <div class="card-container short">
+        <div class="card-container w-full">
           <Card class="mx-8 w-64" padded>A simple padded card.</Card>
         </div>
-        <div class="card-container short">
+      </div>
+    </Example>
+    <Example>
+      <span slot="header">Card with content</span>
+      <div slot="vertical" class="mb-8">
+        <div class="card-container w-full">
           <Card class="mx-8 w-64">
             <Content>
               You can also use
@@ -84,7 +87,12 @@
             </Content>
           </Card>
         </div>
-        <div class="card-container short">
+      </div>
+    </Example>
+    <Example>
+      <span slot="header">Card with outline</span>
+      <div slot="vertical" class="mb-8">
+        <div class="card-container w-full">
           <Card class="mx-8 w-64" variant="outlined" padded>
             An outlined, padded card.
           </Card>
@@ -92,10 +100,10 @@
       </div>
     </Example>
     <Example>
-      <span slot="header">Outlined Card</span>
+      <span slot="header">Card with actions</span>
       <div slot="vertical" class="mb-8">
-        <div class="card-container short w-full">
-          <Card class="w-1/4 mx-auto">
+        <div class="card-container w-full">
+          <Card class="mx-auto">
             <Content>A card with actions.</Content>
             <Actions>
               <Button on:click={() => clicked++}>
@@ -110,9 +118,9 @@
       </div>
     </Example>
     <Example>
-      <span slot="header">Outlined Card</span>
+      <span slot="header">Card with a full-bleed action</span>
       <div slot="vertical" class="mb-8">
-        <div class="card-container short w-full">
+        <div class="card-container w-full">
           <Card class="w-1/4 mx-auto">
             <Content>A card with a full-bleed action.</Content>
             <Actions fullBleed>
@@ -126,9 +134,9 @@
       </div>
     </Example>
     <Example>
-      <span slot="header">Outlined Card</span>
+      <span slot="header">Card with action icons</span>
       <div slot="vertical" class="mb-8">
-        <div class="card-container short w-full">
+        <div class="card-container w-full">
           <Card class="w-1/4 mx-auto">
             <Content>A card with action icons.</Content>
             <Actions>
@@ -158,9 +166,9 @@
       </div>
     </Example>
     <Example>
-      <span slot="header">Outlined Card</span>
+      <span slot="header">Card with actions and action icons</span>
       <div slot="vertical" class="mb-8">
-        <div class="card-container short w-full">
+        <div class="card-container w-full">
           <Card class="w-1/4 mx-auto">
             <Content>A card with Both.</Content>
             <Actions>
@@ -199,10 +207,10 @@
         </div>
       </div>
     </Example>
-    <Example>
-      <span slot="header">Outlined Card</span>
+     <Example>
+      <span slot="header">Card with media 1</span>
       <div slot="vertical" class="mb-8">
-        <div class="card-container short w-full">
+        <div class="card-container w-full">
           <Card class="w-1/4 mx-auto">
             <Media class="card-media-16x9" aspectRatio="16x9">
               <MediaContent>
@@ -222,9 +230,9 @@
       </div>
     </Example>
     <Example>
-      <span slot="header">Outlined Card</span>
+      <span slot="header">Card with media 2</span>
       <div slot="vertical" class="mb-8">
-        <div class="card-container short w-full">
+        <div class="card-container w-full">
           <Card class="w-1/4 mx-auto">
             <Media class="card-media-square" aspectRatio="square">
               <div
@@ -243,9 +251,9 @@
       </div>
     </Example>
     <Example>
-      <span slot="header">Outlined Card</span>
+      <span slot="header">Card with media 3</span>
       <div slot="vertical" class="mb-8">
-        <div class="card-container short w-full">
+        <div class="card-container w-full">
           <Card class="w-1/4 mx-auto">
             <div style="padding: 1rem;">
               <h2 class="mdc-typography--headline6" style="margin: 0;">
@@ -268,28 +276,9 @@
       </div>
     </Example>
     <Example>
-      <span slot="header">Outlined Card</span>
+      <span slot="header">Card with media 4</span>
       <div slot="vertical" class="mb-8">
         <div class="card-container w-full">
-          <div>
-            <div class="w-1/4 mx-auto">A card with a list as content:</div>
-            <Card class="w-1/4 mx-auto">
-              <Content component={List}>
-                {#each [...Array(6)].map((v, i) => i + 1) as item}
-                  <Item on:click={() => clicked++}>
-                    <Text>Item #{item}</Text>
-                  </Item>
-                {/each}
-              </Content>
-            </Card>
-          </div>
-        </div>
-      </div>
-    </Example>
-    <Example>
-      <span slot="header">Outlined Card</span>
-      <div slot="vertical" class="mb-8">
-        <div class="card-container short w-full">
           <Card class="w-1/4 mx-auto">
             <PrimaryAction on:click={() => clicked++}>
               <Media class="card-media-16x9" aspectRatio="16x9">
@@ -348,9 +337,9 @@
       </div>
     </Example>
     <Example>
-      <span slot="header">Outlined Card</span>
+      <span slot="header">Card with media 5</span>
       <div slot="vertical" class="mb-8">
-        <div class="card-container short w-full">
+        <div class="card-container w-full">
           <Card class="w-1/4 mx-auto">
             <PrimaryAction on:click={() => clicked++}>
               <Media class="card-media-16x9" aspectRatio="16x9" />
@@ -399,6 +388,22 @@
                 </IconButton>
               </ActionIcons>
             </Actions>
+          </Card>
+        </div>
+      </div>
+    </Example>
+    <Example>
+      <span slot="header">Card with list content</span>
+      <div slot="vertical" class="mb-8">
+        <div class="card-container w-full">
+          <Card class="w-1/4 mx-auto">
+            <Content component={List}>
+              {#each [...Array(6)].map((v, i) => i + 1) as item}
+                <Item on:click={() => clicked++}>
+                  <Text>Item #{item}</Text>
+                </Item>
+              {/each}
+            </Content>
           </Card>
         </div>
       </div>
