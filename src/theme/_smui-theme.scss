@@ -206,6 +206,12 @@ $mdc-switch-toggled-off-thumb-color: var(--switch-toggle-color);
 $mdc-switch-toggled-off-track-color: var(--switch-track-color);
 $mdc-switch-baseline-theme-color: primary !default;
 
+// Select
+
+.mdc-select__menu .mdc-list .mdc-list-item--selected {
+    color: var(--primary-color);
+  }
+
 // Menu
 
 $mdc-menu-ink-color: var(--font-color);
