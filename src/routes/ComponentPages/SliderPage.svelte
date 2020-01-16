@@ -33,6 +33,10 @@
       .mdc-slider__track-marker:after) {
     background-color: var(--mdc-theme-primary);
   }
+
+  * :global(.mdc-slider:not(.mdc-slider--disabled) .mdc-slider__pin) {
+    color: var(--primary-font-color);
+  }
 </style>
 
 <svelte:head>

@@ -39,11 +39,11 @@
   let valueShapedOutlinedInvalid = "";
 </script>
 
-<!-- <style>
-  * :global(select, .demo-select-width) {
-    min-width: 200px;
+<style>
+  * :global(.mdc-select__menu .mdc-list .mdc-list-item--selected) {
+    color: var(--primary-color);
   }
-</style> -->
+</style>
 
 <svelte:head>
   <title>Select</title>

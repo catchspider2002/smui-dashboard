@@ -3,7 +3,7 @@
   import { stores } from "@sapper/app";
 
   import "./_app.scss";
-  import "./tailwind.css";
+  // import "./tailwind_orig.css";
 
   import TopAppBar, { Row, Section, Title } from "@smui/top-app-bar";
   import Drawer, { Content, Scrim, AppContent } from "@smui/drawer";

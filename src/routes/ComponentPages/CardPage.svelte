@@ -71,7 +71,7 @@
       <span slot="header">Usage</span>
       <div slot="vertical" class="mb-8">
         <div class="card-container w-full">
-          <Card class="mx-8 w-64" padded>A simple padded card.</Card>
+          <Card class="mx-auto" padded>A simple padded card.</Card>
         </div>
       </div>
     </Example>
@@ -79,7 +79,7 @@
       <span slot="header">Card with content</span>
       <div slot="vertical" class="mb-8">
         <div class="card-container w-full">
-          <Card class="mx-8 w-64">
+          <Card class="mx-auto">
             <Content>
               You can also use
               <code>Content</code>
@@ -93,7 +93,7 @@
       <span slot="header">Card with outline</span>
       <div slot="vertical" class="mb-8">
         <div class="card-container w-full">
-          <Card class="mx-8 w-64" variant="outlined" padded>
+          <Card class="mx-auto" variant="outlined" padded>
             An outlined, padded card.
           </Card>
         </div>
