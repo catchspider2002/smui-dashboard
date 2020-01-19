@@ -3,8 +3,8 @@
     "version": "0.0.0",
     "description": "SMUI Website",
     "scripts": {
-        "watch:tailwind": "postcss static/tailwind.css -o static/index.css -w",
-        "build:tailwind": "NODE_ENV=production postcss static/tailwind.css -o static/index.css",
+        "watch:tailwind": "postcss static/tailwind.css -o src/routes/_index.scss -w",
+        "build:tailwind": "NODE_ENV=production postcss static/tailwind.css -o src/routes/_index.scss",
         "dev": "sapper dev -p 5000",
         "build": "npm run build:tailwind && sapper build",
         "export": "sapper export --legacy",

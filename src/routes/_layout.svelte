@@ -3,6 +3,7 @@
   import { stores } from "@sapper/app";
 
   import "./_app.scss";
+  import "./_index.scss";
   // import "./tailwind_orig.css";
 
   import TopAppBar, { Row, Section, Title } from "@smui/top-app-bar";
@@ -131,27 +132,31 @@
       indent: 0
     },
     {
-      name: "Accordion (PRO)",
+      name: "PRO COMPONENTS",
+      indent: 0
+    },
+    {
+      name: "Accordion",
       route: "/ComponentPages/Accordion",
       indent: 2
     },
     {
-      name: "Badge (PRO)",
+      name: "Badge",
       route: "/ComponentPages/BadgePage",
       indent: 2
     },
     {
-      name: "Rating (PRO)",
+      name: "Rating",
       route: "/ComponentPages/RatingPage",
       indent: 2
     },
     {
-      name: "Timeline (PRO)",
+      name: "Timeline",
       route: "/ComponentPages/Timeline",
       indent: 2
     },
     {
-      name: "Tooltip (PRO)",
+      name: "Tooltip",
       route: "/ComponentPages/TooltipPage",
       indent: 2
     },
