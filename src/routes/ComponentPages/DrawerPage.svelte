@@ -64,12 +64,12 @@
     box-sizing: border-box;
   }
 
-  * :global(.mdc-drawer) {
+  /* * :global(.mdc-drawer) {
     border-color: var(--chip-bg-color);
     background-color: var(--mdc-theme-surface, #fff);
-  }
+  } */
 
-  * :global(.mdc-drawer .mdc-drawer__title) {
+  /* * :global(.mdc-drawer .mdc-drawer__title) {
     color: var(--font-color);
   }
 
@@ -86,7 +86,7 @@
       .mdc-list-item--activated
       .mdc-list-item__graphic) {
     color: var(--mdc-theme-primary, #6200ee);
-  }
+  } */
 </style>
 
 <svelte:head>

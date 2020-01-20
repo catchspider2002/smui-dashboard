@@ -179,6 +179,7 @@ $mdc-text-field-disabled-background: var(--disabled-color);
 
 // Select
 // $mdc-select-icon-color: var(--enabled-color);
+$mdc-select-icon-color: yellow;
 $mdc-select-disabled-label-color: var(--disabled-color);
 $mdc-select-disabled-icon-color: var(--disabled-color);
 $mdc-select-disabled-ink-color: var(--disabled-color);
@@ -210,7 +211,7 @@ $mdc-switch-baseline-theme-color: primary !default;
 
 .mdc-select__menu .mdc-list .mdc-list-item--selected {
     color: var(--primary-color);
-  }
+}
 
 // Menu
 
@@ -226,6 +227,31 @@ $mdc-dialog-scrim-color: black;
 $mdc-dialog-title-ink-color: var(--font-color);
 $mdc-dialog-scrim-opacity: 0.52 !default;
 $mdc-dialog-title-ink-opacity: 1 !default;
+
+// Drawer
+
+.mdc-drawer {
+    border-color: var(--chip-bg-color);
+    background-color: var(--mdc-theme-surface, #fff);
+}
+
+.mdc-drawer .mdc-drawer__title {
+    color: var(--font-color);
+}
+
+.mdc-drawer .mdc-drawer__subtitle,
+.mdc-drawer .mdc-list-group__subheader,
+.mdc-drawer .mdc-list-item__graphic {
+    color: var(--enabled-color);
+}
+
+.mdc-list-item--activated,
+.mdc-list-item--activated .mdc-list-item__graphic,
+.mdc-list-item--selected,
+.mdc-list-item--selected .mdc-list-item__graphic,
+.mdc-drawer .mdc-list-item--activated .mdc-list-item__graphic {
+    color: var(--mdc-theme-primary, #6200ee);
+}
 
 // List
 .mdc-drawer .mdc-list-item,

@@ -2,8 +2,8 @@
   import { onMount } from "svelte";
   import { stores } from "@sapper/app";
 
-  import "./_app.scss";
   import "./_index.scss";
+  import "./_app.scss";
   // import "./tailwind_orig.css";
 
   import TopAppBar, { Row, Section, Title } from "@smui/top-app-bar";
@@ -217,12 +217,12 @@
     <Drawer
       variant={miniWindow ? 'modal' : null}
       bind:open={drawerOpen}
-      class="demo-drawer mdc-theme--primary-bg {miniWindow ? 'demo-drawer-adjust' : ''}">
+      class="demo-drawer {miniWindow ? 'demo-drawer-adjust' : ''}">
       <Content>
         <Row>
           <Section>
             <IconButton>
-              <Icon class="material-icons text-yellow-400">ac_unit</Icon>
+              <Icon class="material-icons text-red-400">ac_unit</Icon>
             </IconButton>
             <Title component={A} href="/">SMUI</Title>
           </Section>
@@ -232,10 +232,8 @@
               bind:pressed={initialOff}
               on:click={switchTheme}
               title="Disable {currentTheme} mode">
-              <Icon class="material-icons text-yellow-600" on>
-                chevron_right
-              </Icon>
-              <Icon class="material-icons text-yellow-400">chevron_left</Icon>
+              <Icon class="material-icons text-red-600" on>chevron_right</Icon>
+              <Icon class="material-icons text-red-400">chevron_left</Icon>
             </IconButton>
           </Section>
         </Row>
@@ -248,7 +246,7 @@
               activated={'route' in section && section.route === $page.path}
               title={section.name}
               style={section.indent ? 'margin-left: ' + section.indent * 25 + 'px;' : ''}>
-              <Text class="mdc-theme--on-secondary">{section.name}</Text>
+              <Text class="">{section.name}</Text>
             </Item>
           {/each}
         </List>
@@ -273,14 +271,14 @@
             <Title
               component={A}
               href="/"
-              class="mdc-theme--primary"
+              class=""
               style={miniWindow ? 'padding-left: 0;' : ''}>
               Dashboard
             </Title>
           </Section>
           <Section align="end" toolbar>
             <IconButton on:click={() => (drawerOpen = !drawerOpen)}>
-              <Icon class="material-icons text-yellow-400">chevron_right</Icon>
+              <Icon class="material-icons text-red-400">chevron_right</Icon>
             </IconButton>
             <IconButton
               toggle
