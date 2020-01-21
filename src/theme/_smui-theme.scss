@@ -230,6 +230,10 @@ $mdc-dialog-title-ink-opacity: 1 !default;
 
 // Drawer
 
+.mdc-top-app-bar__title {
+    color: var(--font-color);
+}
+
 .mdc-drawer {
     border-color: var(--chip-bg-color);
     background-color: var(--mdc-theme-surface, #fff);
