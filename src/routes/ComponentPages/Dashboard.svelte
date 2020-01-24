@@ -12,6 +12,10 @@
   .bg-light-grad {
     background-image: linear-gradient(to right, #ed64a6, #d53f8c);
   }
+
+  .custom-card {
+    background-color: var(--bg-card-color);
+  }
 </style>
 
 <!-- <div class="flex flex-wrap">
@@ -42,7 +46,7 @@
 </div> -->
 
 <div class="flex flex-wrap">
-  <div class="w-full h-64 lg:w-1/2 mb-4 bg-gray-500">
+  <div class="w-full h-64 lg:w-1/2 mb-4 bg-gray-500 custom-card">
     <ChartLine
       type="bar"
       barType="stacked"
@@ -53,7 +57,7 @@
       showYGrid={true}
       showLegend={true} />
   </div>
-  <div class="w-full h-64 lg:w-1/2 mb-4 bg-gray-400">
+  <div class="w-full h-64 lg:w-1/2 mb-4 bg-gray-400 custom-card">
     <ChartLine
       type="bar"
       barType="grouped"
@@ -68,7 +72,7 @@
 </div>
 
 <div class="flex flex-wrap">
-  <div class="w-full h-64 xl:w-1/3 mb-4 bg-gray-500">
+  <div class="w-full h-64 xl:w-1/3 mb-4 bg-gray-500 custom-card">
     <ChartLine
       type="line"
       lineColor="#38A169"
@@ -78,7 +82,7 @@
       showXGrid={true}
       showYGrid={true} />
   </div>
-  <div class="w-full h-64 xl:w-1/3 mb-4 bg-gray-400">
+  <div class="w-full h-64 xl:w-1/3 mb-4 bg-gray-400 custom-card">
     <ChartLine
       type="line"
       lineColor="#38A169"
@@ -88,7 +92,7 @@
       showYGrid={true}
       lineArea={true} />
   </div>
-  <div class="w-full h-64 xl:w-1/3 mb-4 bg-gray-500">
+  <div class="w-full h-64 xl:w-1/3 mb-4 bg-gray-500 custom-card">
     <ChartLine
       type="line"
       lineColor="#ffffff"
@@ -102,22 +106,19 @@
 </div>
 
 <div class="flex flex-wrap">
-  <div class="w-full h-64 lg:w-1/2 xl:w-1/4 mb-4 bg-gray-500">
+  <div class="w-full h-64 xl:w-1/3 mb-4 bg-gray-500 custom-card">
     <ChartLine type="pie" showLegend={true} />
   </div>
-  <div class="w-full h-64 lg:w-1/2 xl:w-1/4 mb-4 bg-gray-400">
-    <ChartLine type="pie" showLegend={true} />
-  </div>
-  <div class="w-full h-64 lg:w-1/2 xl:w-1/4 mb-4 bg-gray-500">
+  <div class="w-full h-64 xl:w-1/3 mb-4 bg-gray-500 custom-card">
     <ChartLine type="doughnut" showLegend={true} donutPercent="80" />
   </div>
-  <div class="w-full h-64 lg:w-1/2 xl:w-1/4 mb-4 bg-gray-400">
+  <div class="w-full h-64 xl:w-1/3 mb-4 bg-gray-500 custom-card">
     <ChartLine type="doughnut" showLegend={true} />
   </div>
 </div>
 
 <div class="flex flex-wrap">
-  <div class="w-full h-64 xl:w-1/3 mb-4 bg-gray-500">
+  <div class="w-full h-64 xl:w-1/3 mb-4 bg-gray-500 custom-card">
     <ChartLine
       type="bar"
       beginYZero={true}
@@ -127,7 +128,7 @@
       showXGrid={true}
       showYGrid={true} />
   </div>
-  <div class="w-full h-64 xl:w-1/3 mb-4 bg-gray-400">
+  <div class="w-full h-64 xl:w-1/3 mb-4 bg-gray-400 custom-card">
     <ChartLine
       type="horizontalBar"
       lineColor="#38a169"
@@ -137,7 +138,7 @@
       showYGrid={true}
       beginXZero={true} />
   </div>
-  <div class="w-full h-64 xl:w-1/3 mb-4 bg-gray-500">
+  <div class="w-full h-64 xl:w-1/3 mb-4 bg-gray-500 custom-card">
     <ChartLine
       type="bar"
       lineColor="#38a169"

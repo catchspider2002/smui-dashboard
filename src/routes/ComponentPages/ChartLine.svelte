@@ -32,17 +32,29 @@
   // let themeColor = hexToHSL("38a169", 1);
 
   function createLineChart() {
-    backgroundColor =
-      backgroundColor ||
-      getComputedStyle(document.getElementById(chartId).parentElement)
-        .backgroundColor;
+    let currentTheme = localStorage.getItem("theme") || "light";
+    // console.log("currentTheme: " + currentTheme);
+    // console.log(
+    //   "data-theme: " + document.documentElement.getAttribute("data-theme")
+    // );
+
+    // backgroundColor =
+    //   backgroundColor ||
+    //   getComputedStyle(document.getElementById(chartId).parentElement)
+    //     .backgroundColor;
 
     if (!labelColor) {
-      if (RGBLuminance(backgroundColor) > 0.5) labelColor = "#000000";
-      else labelColor = "#FFFFFF";
+      if (backgroundColor) {
+        if (RGBLuminance(backgroundColor) > 0.5) labelColor = "#000000";
+        else labelColor = "#FFFFFF";
+      } else {
+        if (currentTheme == "light") labelColor = "#000000";
+        else labelColor = "#FFFFFF";
+      }
     }
 
-    gridColor = gridColor || hexToHSL(labelColor, 0.1);
+    gridColor = hexToHSL(labelColor, 0.1);
+    // console.log("gridColor: " + gridColor);
     let newLabelColor = hexToHSL(labelColor, 0.9);
     pointColor = pointColor || backgroundColor;
 
