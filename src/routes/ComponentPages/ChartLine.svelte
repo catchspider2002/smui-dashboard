@@ -27,12 +27,12 @@
 
   let chartId = "random" + Math.floor(Math.random() * 10000 + 1),
     backgroundColor;
+  $: currentTheme = localStorage.getItem("theme") || "light";
 
   // let themeColor = "#805ad5"; // purple-600
   // let themeColor = hexToHSL("38a169", 1);
 
   function createLineChart() {
-    let currentTheme = localStorage.getItem("theme") || "light";
     // console.log("currentTheme: " + currentTheme);
     // console.log(
     //   "data-theme: " + document.documentElement.getAttribute("data-theme")
@@ -42,7 +42,11 @@
     //   backgroundColor ||
     //   getComputedStyle(document.getElementById(chartId).parentElement)
     //     .backgroundColor;
+    // let style1 = window.getComputedStyle(
+    //   document.getElementById(chartId).parentElement
+    // );
 
+    // console.log(style1.getPropertyValue("background-color"));
     if (!labelColor) {
       if (backgroundColor) {
         if (RGBLuminance(backgroundColor) > 0.5) labelColor = "#000000";
@@ -52,8 +56,15 @@
         else labelColor = "#FFFFFF";
       }
     }
+    if (!backgroundColor) {
+      if (currentTheme == "light") backgroundColor = "hsl(0, 0%, 100%)";
+      else backgroundColor = "hsl(0, 0%, 25.9%)";
+    }
 
-    gridColor = hexToHSL(labelColor, 0.1);
+    if (type == "pie" || type == "doughnut") {
+      if (currentTheme == "light") gridColor = "hsl(0, 0%, 100%)";
+      else gridColor = "hsl(0, 0%, 25.9%)";
+    } else gridColor = hexToHSL(labelColor, 0.1);
     // console.log("gridColor: " + gridColor);
     let newLabelColor = hexToHSL(labelColor, 0.9);
     pointColor = pointColor || backgroundColor;
@@ -185,7 +196,7 @@
       }
     });
     Chart.defaults.global.defaultFontFamily = "'Varela Round', sans-serif";
-  }
+  };
 
   afterUpdate(createLineChart);
 

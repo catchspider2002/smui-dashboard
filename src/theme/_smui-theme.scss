@@ -4,6 +4,7 @@
 @import "@material/theme/color-palette";
 
 $mdc-typography-font-family: var(--font-family);
+
 @import "@material/typography/mdc-typography";
 
 :root {
@@ -124,7 +125,6 @@ body {
     transition: color var(--duration) var(--timing), background-color var(--duration) var(--timing);
     font-family: var(--font-family);
 }
-
 // $mdc-button-shape-radius: 999px;
 
 $mdc-theme-error: $material-color-red-900;
