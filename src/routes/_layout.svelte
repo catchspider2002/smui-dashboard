@@ -1,6 +1,9 @@
 <script>
   import { onMount } from "svelte";
   import { stores } from "@sapper/app";
+  import { theme } from "./stores.js";
+
+  // theme.useLocalStorage();
 
   import "./_index.scss";
   import "./_app.scss";
@@ -185,18 +188,27 @@
   // Dark Theme
   let initialOff, currentTheme;
 
+  let curr_theme;
+
+  const unsubscribe = theme.subscribe(value => {
+    curr_theme = value;
+  });
+
+  console.log("curr_theme: " + curr_theme);
+
   const checkTheme = () => {
-    currentTheme = localStorage.getItem("theme") || "light";
-    document.documentElement.setAttribute("data-theme", currentTheme);
-    initialOff = currentTheme === "dark" ? false : true;
+    // currentTheme = curr_theme; //localStorage.getItem("theme") || "light";
+    document.documentElement.setAttribute("data-theme", curr_theme);
+    initialOff = curr_theme === "dark" ? false : true;
   };
 
   onMount(checkTheme);
 
   const switchTheme = () => {
-    currentTheme = initialOff ? "dark" : "light";
-    document.documentElement.setAttribute("data-theme", currentTheme);
-    localStorage.setItem("theme", currentTheme);
+    curr_theme = initialOff ? "dark" : "light";
+    document.documentElement.setAttribute("data-theme", curr_theme);
+    // localStorage.setItem("theme", currentTheme);
+    theme.set(curr_theme);
   };
 </script>
 
@@ -231,7 +243,7 @@
               toggle
               bind:pressed={initialOff}
               on:click={switchTheme}
-              title="Disable {currentTheme} mode">
+              title="Disable {curr_theme} mode">
               <Icon class="material-icons text-red-600" on>chevron_right</Icon>
               <Icon class="material-icons text-red-400">chevron_left</Icon>
             </IconButton>
@@ -284,7 +296,7 @@
               toggle
               bind:pressed={initialOff}
               on:click={switchTheme}
-              title="Disable {currentTheme} mode">
+              title="Disable {curr_theme} mode">
               <Icon class="material-icons text-yellow-600" on>
                 brightness_2
               </Icon>

@@ -1,5 +1,6 @@
 <script>
   import { onMount, afterUpdate } from "svelte";
+  import { theme } from "../stores.js";
   export let type,
     showXGrid,
     showYGrid,
@@ -27,16 +28,25 @@
 
   let chartId = "random" + Math.floor(Math.random() * 10000 + 1),
     backgroundColor;
-  $: currentTheme = localStorage.getItem("theme") || "light";
+  // let currentTheme = localStorage.getItem("theme") || "light";
+  // console.log("currentTheme: " + currentTheme);
+  // $: newTheme = localStorage.getItem("theme") || "light";
 
   // let themeColor = "#805ad5"; // purple-600
   // let themeColor = hexToHSL("38a169", 1);
 
+  let curr_theme, currentLabelColor, currentBackgroundColor;
+
+  const unsubscribe = theme.subscribe(value => {
+    curr_theme = value;
+  });
+
+  afterUpdate(createLineChart);
+
+  $: curr_theme, afterUpdate(createLineChart);
+
   function createLineChart() {
-    // console.log("currentTheme: " + currentTheme);
-    // console.log(
-    //   "data-theme: " + document.documentElement.getAttribute("data-theme")
-    // );
+    console.log("createLineChart curr_theme: " + curr_theme);
 
     // backgroundColor =
     //   backgroundColor ||
@@ -46,27 +56,31 @@
     //   document.getElementById(chartId).parentElement
     // );
 
+    console.log("createLineChart labelColor: " + labelColor);
     // console.log(style1.getPropertyValue("background-color"));
     if (!labelColor) {
       if (backgroundColor) {
-        if (RGBLuminance(backgroundColor) > 0.5) labelColor = "#000000";
-        else labelColor = "#FFFFFF";
+        if (RGBLuminance(backgroundColor) > 0.5) currentLabelColor = "#000000";
+        else currentLabelColor = "#FFFFFF";
       } else {
-        if (currentTheme == "light") labelColor = "#000000";
-        else labelColor = "#FFFFFF";
+        if (curr_theme == "light") currentLabelColor = "#000000";
+        else currentLabelColor = "#FFFFFF";
+        console.log("createLineChart currentLabelColor: " + currentLabelColor);
       }
     }
-    if (!backgroundColor) {
-      if (currentTheme == "light") backgroundColor = "hsl(0, 0%, 100%)";
-      else backgroundColor = "hsl(0, 0%, 25.9%)";
-    }
 
+    currentLabelColor = labelColor || currentLabelColor;
+    if (!backgroundColor) {
+      if (curr_theme == "light") currentBackgroundColor = "hsl(0, 0%, 100%)";
+      else currentBackgroundColor = "hsl(0, 0%, 25.9%)";
+    }
+    currentBackgroundColor = backgroundColor || currentBackgroundColor;
     if (type == "pie" || type == "doughnut") {
-      if (currentTheme == "light") gridColor = "hsl(0, 0%, 100%)";
+      if (curr_theme == "light") gridColor = "hsl(0, 0%, 100%)";
       else gridColor = "hsl(0, 0%, 25.9%)";
-    } else gridColor = hexToHSL(labelColor, 0.1);
+    } else gridColor = hexToHSL(currentLabelColor, 0.1);
     // console.log("gridColor: " + gridColor);
-    let newLabelColor = hexToHSL(labelColor, 0.9);
+    let newLabelColor = hexToHSL(currentLabelColor, 0.9);
     pointColor = pointColor || backgroundColor;
 
     let dataset = [
@@ -123,7 +137,7 @@
             "#805ad5",
             "#d000d5"
           ],
-          borderColor: backgroundColor,
+          borderColor: currentBackgroundColor,
           borderWidth: pieSpacing
         }
       ];
@@ -162,8 +176,8 @@
               },
               gridLines: {
                 display: true,
-                color: showYGrid ? gridColor : backgroundColor,
-                zeroLineColor: showYGrid ? gridColor : backgroundColor
+                color: showYGrid ? gridColor : currentBackgroundColor,
+                zeroLineColor: showYGrid ? gridColor : currentBackgroundColor
               }
             }
           ],
@@ -177,8 +191,8 @@
               },
               gridLines: {
                 display: true,
-                color: showXGrid ? gridColor : backgroundColor,
-                zeroLineColor: showXGrid ? gridColor : backgroundColor
+                color: showXGrid ? gridColor : currentBackgroundColor,
+                zeroLineColor: showXGrid ? gridColor : currentBackgroundColor
               }
             }
           ]
@@ -196,9 +210,7 @@
       }
     });
     Chart.defaults.global.defaultFontFamily = "'Varela Round', sans-serif";
-  };
-
-  afterUpdate(createLineChart);
+  }
 
   const hexToHSL = (hex, percent) => {
     let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
