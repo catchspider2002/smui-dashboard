@@ -1,7 +1,5 @@
 <script>
   import ChartLine from "./ChartLine.svelte";
-
-  // import Timeline from "./Timeline.svelte;
   import Chart from "chart.js";
 </script>
 
