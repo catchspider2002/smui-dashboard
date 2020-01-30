@@ -2,24 +2,23 @@
   import { onMount, afterUpdate } from "svelte";
   import { theme } from "../stores.js";
   export let type,
-    showXGrid,
-    showYGrid,
-    showXLabel,
-    showYLabel,
-    showLegend,
-    beginXZero,
-    beginYZero,
-    lineColor, // hex
+    showXGrid = false,
+    showYGrid = false,
+    showXLabel = false,
+    showYLabel = false,
+    showLegend = false,
+    beginXZero = false,
+    beginYZero = false,
+    lineColor = "#ffffff", // hex
     pointColor, // hex
     labelColor, // hex
-    gridColor, // hex
     // Line
     lineArea = false,
     lineCurve = false,
     pointRadius = 4,
     lineThickness = 3,
     // Bar
-    barType,
+    barType = "",
     barPercent = 30,
     // Donut
     donutPercent = type == "doughnut" ? 50 : 0,
@@ -27,7 +26,8 @@
     pieSpacing = 3;
 
   let chartId = "random" + Math.floor(Math.random() * 10000 + 1),
-    backgroundColor;
+    backgroundColor,
+    gridColor; // hex;
   // let currentTheme = localStorage.getItem("theme") || "light";
   // console.log("currentTheme: " + currentTheme);
   // $: newTheme = localStorage.getItem("theme") || "light";
@@ -46,7 +46,9 @@
   $: curr_theme, afterUpdate(createLineChart);
 
   function createLineChart() {
+    curr_theme = localStorage.getItem("theme") || "light";
     console.log("createLineChart curr_theme: " + curr_theme);
+    // console.log("createLineChart curr_theme: " + curr_theme);
 
     // backgroundColor =
     //   backgroundColor ||
@@ -56,7 +58,7 @@
     //   document.getElementById(chartId).parentElement
     // );
 
-    console.log("createLineChart labelColor: " + labelColor);
+    // console.log("createLineChart labelColor: " + labelColor);
     // console.log(style1.getPropertyValue("background-color"));
     if (!labelColor) {
       if (backgroundColor) {
@@ -65,7 +67,7 @@
       } else {
         if (curr_theme == "light") currentLabelColor = "#000000";
         else currentLabelColor = "#FFFFFF";
-        console.log("createLineChart currentLabelColor: " + currentLabelColor);
+        // console.log("createLineChart currentLabelColor: " + currentLabelColor);
       }
     }
 
@@ -285,6 +287,16 @@
     let luminance = (rgb[0] * 0.2126 + rgb[1] * 0.7152 + rgb[2] * 0.0722) / 255;
     return luminance;
   };
+
+  function onResize() {
+    console.log("Resized");
+    afterUpdate(createLineChart);
+    // location.reload();
+    // console.log("Resized agter");
+  }
+
+  // window.addEventListener("resize", onResize, true);
 </script>
 
+<svelte:window on:resize={onResize} />
 <canvas id={chartId} width="1" height="1" />

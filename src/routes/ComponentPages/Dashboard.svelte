@@ -95,7 +95,6 @@
   <div class="w-full h-64 xl:w-1/3 mb-4 bg-dark-grad">
     <ChartLine
       type="line"
-      lineColor="#ffffff"
       labelColor="#ffffff"
       pointColor="#ffffff"
       showXLabel={true}
@@ -123,7 +122,6 @@
     <ChartLine
       type="bar"
       beginYZero={true}
-      lineColor="#ffffff"
       labelColor="#ffffff"
       showXLabel={true}
       showYLabel={true}

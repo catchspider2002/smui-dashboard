@@ -164,6 +164,11 @@
       indent: 2
     },
     {
+      name: "Chart",
+      route: "/ComponentPages/ChartPage",
+      indent: 2
+    },
+    {
       name: "Dashboard",
       route: "/ComponentPages/Dashboard",
       indent: 2
@@ -186,28 +191,31 @@
   }
 
   // Dark Theme
-  let initialOff, currentTheme;
-
-  let curr_theme;
-
-  const unsubscribe = theme.subscribe(value => {
-    curr_theme = value;
-  });
-
-  console.log("curr_theme: " + curr_theme);
+  let initialOff, currentTheme, curr_theme; // = localStorage.getItem("theme") || "light";
 
   const checkTheme = () => {
-    // currentTheme = curr_theme; //localStorage.getItem("theme") || "light";
-    document.documentElement.setAttribute("data-theme", curr_theme);
-    initialOff = curr_theme === "dark" ? false : true;
+    currentTheme = localStorage.getItem("theme") || "light";
+    // console.log("checkTheme currentTheme: " + currentTheme);
+    document.documentElement.setAttribute("data-theme", currentTheme);
+    initialOff = currentTheme === "dark" ? false : true;
+    theme.set(currentTheme);
   };
 
   onMount(checkTheme);
 
   const switchTheme = () => {
+    const unsubscribe = theme.subscribe(value => {
+      curr_theme = value;
+    });
+
+    // console.log("switchTheme curr_theme: " + curr_theme);
     curr_theme = initialOff ? "dark" : "light";
-    document.documentElement.setAttribute("data-theme", curr_theme);
+    // document.documentElement.setAttribute("data-theme", curr_theme);
     // localStorage.setItem("theme", currentTheme);
+    // theme.set(curr_theme);
+    currentTheme = initialOff ? "dark" : "light";
+    document.documentElement.setAttribute("data-theme", currentTheme);
+    localStorage.setItem("theme", currentTheme);
     theme.set(curr_theme);
   };
 </script>
@@ -243,7 +251,7 @@
               toggle
               bind:pressed={initialOff}
               on:click={switchTheme}
-              title="Disable {curr_theme} mode">
+              title="Disable {currentTheme} mode">
               <Icon class="material-icons text-red-600" on>chevron_right</Icon>
               <Icon class="material-icons text-red-400">chevron_left</Icon>
             </IconButton>
@@ -296,7 +304,7 @@
               toggle
               bind:pressed={initialOff}
               on:click={switchTheme}
-              title="Disable {curr_theme} mode">
+              title="Disable {currentTheme} mode">
               <Icon class="material-icons text-yellow-600" on>
                 brightness_2
               </Icon>
