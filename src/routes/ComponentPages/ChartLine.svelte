@@ -145,73 +145,75 @@
       ];
     }
 
-    var ctx = document.getElementById(chartId).getContext("2d");
+    if (document.getElementById(chartId)) {
+      var ctx = document.getElementById(chartId).getContext("2d");
 
-    var myChart = new Chart(ctx, {
-      type: type,
-      data: {
-        labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
-        datasets: dataset
-      },
-      options: {
-        segmentShowStroke: true,
-        segmentStrokeColor: "#fff",
-        segmentStrokeWidth: 2,
-        percentageInnerCutout: 50,
-        animationSteps: 100,
-        animationEasing: "easeOutBounce",
-        animateRotate: true,
-        animateScale: false,
-        responsive: true,
-        maintainAspectRatio: false,
-        showScale: true,
-        animateScale: true,
-        cutoutPercentage: donutPercent,
-        scales: {
-          yAxes: [
-            {
-              stacked: barType == "stacked",
-              ticks: {
-                beginAtZero: beginYZero,
-                fontColor: newLabelColor,
-                display: showYLabel
-              },
-              gridLines: {
-                display: true,
-                color: showYGrid ? gridColor : currentBackgroundColor,
-                zeroLineColor: showYGrid ? gridColor : currentBackgroundColor
-              }
-            }
-          ],
-          xAxes: [
-            {
-              stacked: barType == "stacked",
-              ticks: {
-                beginAtZero: beginXZero,
-                fontColor: newLabelColor,
-                display: showXLabel
-              },
-              gridLines: {
-                display: true,
-                color: showXGrid ? gridColor : currentBackgroundColor,
-                zeroLineColor: showXGrid ? gridColor : currentBackgroundColor
-              }
-            }
-          ]
+      var myChart = new Chart(ctx, {
+        type: type,
+        data: {
+          labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+          datasets: dataset
         },
-        legend: {
-          labels: {
-            fontColor: newLabelColor,
+        options: {
+          segmentShowStroke: true,
+          segmentStrokeColor: "#fff",
+          segmentStrokeWidth: 2,
+          percentageInnerCutout: 50,
+          animationSteps: 100,
+          animationEasing: "easeOutBounce",
+          animateRotate: true,
+          animateScale: false,
+          responsive: true,
+          maintainAspectRatio: false,
+          showScale: true,
+          animateScale: true,
+          cutoutPercentage: donutPercent,
+          scales: {
+            yAxes: [
+              {
+                stacked: barType == "stacked",
+                ticks: {
+                  beginAtZero: beginYZero,
+                  fontColor: newLabelColor,
+                  display: showYLabel
+                },
+                gridLines: {
+                  display: true,
+                  color: showYGrid ? gridColor : currentBackgroundColor,
+                  zeroLineColor: showYGrid ? gridColor : currentBackgroundColor
+                }
+              }
+            ],
+            xAxes: [
+              {
+                stacked: barType == "stacked",
+                ticks: {
+                  beginAtZero: beginXZero,
+                  fontColor: newLabelColor,
+                  display: showXLabel
+                },
+                gridLines: {
+                  display: true,
+                  color: showXGrid ? gridColor : currentBackgroundColor,
+                  zeroLineColor: showXGrid ? gridColor : currentBackgroundColor
+                }
+              }
+            ]
+          },
+          legend: {
+            labels: {
+              fontColor: newLabelColor,
+              display: showLegend
+            },
             display: showLegend
           },
-          display: showLegend
-        },
-        tooltips: {
-          mode: barType == "stacked" ? "index" : "nearest"
+          tooltips: {
+            mode: barType == "stacked" ? "index" : "nearest"
+          }
         }
-      }
-    });
-    Chart.defaults.global.defaultFontFamily = "'Varela Round', sans-serif";
+      });
+      Chart.defaults.global.defaultFontFamily = "'Montserrat', sans-serif";
+    }
   }
 
   const hexToHSL = (hex, percent) => {

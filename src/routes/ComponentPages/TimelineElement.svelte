@@ -165,7 +165,7 @@
   </div>
 
   <div
-    class="timeline__content flex flex-col relative block bg-white p-4 ml-20
+    class="timeline__content flex flex-col relative block bg-card-color p-4 ml-20
     shadow-md sm:ml-0 {classes}">
     <span class="text-xl font-semibold text-center text-red-500 mb-2">
       {header}

@@ -127,6 +127,14 @@ body {
 }
 // $mdc-button-shape-radius: 999px;
 
+.bg-layer-color {
+    background-color: var(--bg-layer-color);
+}
+
+.bg-card-color {
+    background-color: var(--bg-card-color);
+}
+
 $mdc-theme-error: $material-color-red-900;
 
 // Button

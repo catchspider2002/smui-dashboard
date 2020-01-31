@@ -23,7 +23,7 @@
 </svelte:head>
 
 <Page>
-  <span slot="header">Menu</span>
+  <span slot="header">Chart</span>
   <span slot="description">
     A menu displays a list of choices on a temporary surface. They appear when
     users interact with a button, action, or other control.
@@ -128,7 +128,7 @@
     <Example>
       <span slot="header">Bar Chart - Stacked</span>
       <div slot="vertical" class="mb-8">
-        <div class="w-full h-64 lg:w-1/2 mb-4 custom-card">
+        <div class="w-full h-64 mb-4 custom-card">
           <ChartLine
             type="bar"
             barType="stacked"
@@ -144,7 +144,7 @@
     <Example>
       <span slot="header">Bar Chart - Grouped</span>
       <div slot="vertical" class="mb-8">
-        <div class="w-full h-64 lg:w-1/2 mb-4 custom-card">
+        <div class="w-full h-64 mb-4 custom-card">
           <ChartLine
             type="bar"
             barType="grouped"
@@ -161,7 +161,7 @@
     <Example>
       <span slot="header">Pie Chart</span>
       <div slot="vertical" class="mb-8">
-        <div class="w-full h-64 xl:w-1/3 mb-4 custom-card">
+        <div class="w-full h-64 mb-4 custom-card">
           <ChartLine type="pie" showLegend={true} />
         </div>
       </div>
@@ -169,7 +169,7 @@
     <Example>
       <span slot="header">Doughnut Chart</span>
       <div slot="vertical" class="mb-8">
-        <div class="w-full h-64 xl:w-1/3 mb-4 custom-card">
+        <div class="w-full h-64 mb-4 custom-card">
           <ChartLine type="doughnut" showLegend={true} />
         </div>
       </div>
@@ -177,7 +177,7 @@
     <Example>
       <span slot="header">Doughnut Chart - Custom Percentage</span>
       <div slot="vertical" class="mb-8">
-        <div class="w-full h-64 xl:w-1/3 mb-4 custom-card">
+        <div class="w-full h-64 mb-4 custom-card">
           <ChartLine type="doughnut" showLegend={true} donutPercent="80" />
         </div>
       </div>
