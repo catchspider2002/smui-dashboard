@@ -2,6 +2,6 @@
 @import "@material/theme/color-palette";
 
 .my-colored-bar {
-  @include mdc-linear-progress-bar-color($material-color-red-500);
-  @include mdc-linear-progress-buffer-color($material-color-red-100);
+    @include mdc-linear-progress-bar-color($material-color-red-500);
+    @include mdc-linear-progress-buffer-color($material-color-red-100);
 }

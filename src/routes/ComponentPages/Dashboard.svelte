@@ -1,6 +1,27 @@
 <script>
+  import { onMount } from "svelte";
   import ChartLine from "./ChartLine.svelte";
   import Chart from "chart.js";
+  import Tab, { Icon, Label } from "@smui/tab";
+  import TabBar from "@smui/tab-bar";
+  import Button from "@smui/button";
+
+  let active = "Today";
+
+  onMount(checkActive);
+  console.log(active);
+
+  function checkActive() {
+    console.log(checkActive);
+    let contentEls = document.querySelectorAll(".content");
+    // Hide currently-active content
+    document
+      .querySelector(".content--active")
+      .classList.remove("content--active");
+
+    // Show content for newly-activated tab
+    // contentEls[event.detail.index].classList.add("content--active");
+  }
 </script>
 
 <style>
@@ -13,6 +34,14 @@
 
   .custom-card {
     background-color: var(--bg-card-color);
+  }
+
+  .content {
+    display: none;
+  }
+
+  .content--active {
+    display: block;
   }
 </style>
 
@@ -42,6 +71,57 @@
   <div class="w-full h-64 lg:w-1/2 mb-4 bg-gray-500" />
   <div class="w-full h-64 lg:w-1/2 mb-4 bg-gray-400" />
 </div> -->
+
+<div class="flex flex-wrap">
+  <div class="w-full h-64 mb-4 bg-dark-grad">
+    <TabBar tabs={['Today', 'This week', 'All Time']} let:tab bind:active>
+      <Tab {tab} minWidth>
+        <Label>{tab}</Label>
+      </Tab>
+    </TabBar>
+    <!-- <div style="margin-top: 15px;">
+      Programmatically select:
+      {#each ['Today', 'This week', 'All Time'] as tab}
+        <Button on:click={() => (active = tab)}>
+          <Label>{tab}</Label>
+        </Button>
+      {/each}
+    </div> -->
+    <div class="content content--active">
+      <p>Content one</p>
+    </div>
+    <div class="content">
+      <p>Content two</p>
+    </div>
+    <div class="content">
+      <p>Content three</p>
+    </div>
+    <!-- <ChartLine
+      type="bar"
+      barType="grouped"
+      barPercent="60"
+      beginYZero={true}
+      showXLabel={true}
+      showYLabel={true}
+      showXGrid={true}
+      showYGrid={true}
+      showLegend="true" /> -->
+  </div>
+</div>
+<div class="flex flex-wrap">
+  Product Sales
+  <div class="w-full h-64 mb-4 custom-card">
+    <ChartLine
+      type="bar"
+      barType="stacked"
+      beginYZero={true}
+      showXLabel={true}
+      showYLabel={true}
+      showXGrid={true}
+      showYGrid={true}
+      showLegend={true} />
+  </div>
+</div>
 
 <div class="flex flex-wrap">
   <div class="w-full h-64 lg:w-1/2 mb-4 custom-card">

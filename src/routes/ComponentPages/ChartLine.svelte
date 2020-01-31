@@ -1,6 +1,7 @@
 <script>
   import { onMount, afterUpdate } from "svelte";
   import { theme } from "../stores.js";
+
   export let type,
     showXGrid = false,
     showYGrid = false,
@@ -23,11 +24,21 @@
     // Donut
     donutPercent = type == "doughnut" ? 50 : 0,
     //  Pie
-    pieSpacing = 3;
+    pieSpacing = 3,
+    color1 = "#38a169",
+    color2 = "#e53e3e",
+    color3 = "#d69e2e",
+    color4 = "#319795",
+    color5 = "#3182ce",
+    color6 = "#805ad5",
+    color7 = "#d000d5",
+    chartLabel = "Total Sales",
+    xAxisLabel = ["Q1", "Q2", "Q3", "Q4"];
 
   let chartId = "random" + Math.floor(Math.random() * 10000 + 1),
     backgroundColor,
     gridColor; // hex;
+
   // let currentTheme = localStorage.getItem("theme") || "light";
   // console.log("currentTheme: " + currentTheme);
   // $: newTheme = localStorage.getItem("theme") || "light";
@@ -48,18 +59,7 @@
   function createLineChart() {
     curr_theme = localStorage.getItem("theme") || "light";
     console.log("createLineChart curr_theme: " + curr_theme);
-    // console.log("createLineChart curr_theme: " + curr_theme);
 
-    // backgroundColor =
-    //   backgroundColor ||
-    //   getComputedStyle(document.getElementById(chartId).parentElement)
-    //     .backgroundColor;
-    // let style1 = window.getComputedStyle(
-    //   document.getElementById(chartId).parentElement
-    // );
-
-    // console.log("createLineChart labelColor: " + labelColor);
-    // console.log(style1.getPropertyValue("background-color"));
     if (!labelColor) {
       if (backgroundColor) {
         if (RGBLuminance(backgroundColor) > 0.5) currentLabelColor = "#000000";
@@ -67,7 +67,6 @@
       } else {
         if (curr_theme == "light") currentLabelColor = "#000000";
         else currentLabelColor = "#FFFFFF";
-        // console.log("createLineChart currentLabelColor: " + currentLabelColor);
       }
     }
 
@@ -87,7 +86,7 @@
 
     let dataset = [
       {
-        label: "# of Votes",
+        label: chartLabel,
         data: [12, 19, 3, 5, 2, 3, 4],
         lineTension: lineCurve ? 0.4 : 0,
         fill: lineArea,
@@ -104,13 +103,13 @@
         dataset = [
           {
             label: "New Clients",
-            backgroundColor: "#9f7aea",
-            data: [664, 691, 636, 662, 686, 668, 622],
+            backgroundColor: color1,
+            data: [590, 691, 636, 662, 686, 668, 622],
             barPercentage: barPercent / 100
           },
           {
             label: "Retained Clients",
-            backgroundColor: "#f56565",
+            backgroundColor: color2,
             data: [106, 131, 156, 184, 186, 142, 124],
             barPercentage: barPercent / 100
           }
@@ -118,7 +117,7 @@
       } else {
         dataset = [
           {
-            label: "# of Votes",
+            label: chartLabel,
             data: [12, 19, 3, 5, 2, 3, 4],
             backgroundColor: hexToHSL(lineColor, 1),
             barPercentage: barPercent / 100
@@ -128,16 +127,16 @@
     } else if (type == "pie" || type == "doughnut") {
       dataset = [
         {
-          label: "# of Votes",
+          label: chartLabel,
           data: [12, 19, 3, 5, 2, 3, 5],
           backgroundColor: [
-            "#38a169",
-            "#e53e3e",
-            "#d69e2e",
-            "#319795",
-            "#3182ce",
-            "#805ad5",
-            "#d000d5"
+            color1,
+            color2,
+            color3,
+            color4,
+            color5,
+            color6,
+            color7
           ],
           borderColor: currentBackgroundColor,
           borderWidth: pieSpacing
@@ -151,7 +150,7 @@
       var myChart = new Chart(ctx, {
         type: type,
         data: {
-          labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+          labels: xAxisLabel,
           datasets: dataset
         },
         options: {
