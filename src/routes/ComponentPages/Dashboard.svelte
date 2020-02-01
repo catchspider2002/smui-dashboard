@@ -12,7 +12,7 @@
   console.log(active);
 
   function checkActive() {
-    console.log(checkActive);
+    console.log("checkActive");
     let contentEls = document.querySelectorAll(".content");
     // Hide currently-active content
     document
@@ -22,6 +22,23 @@
     // Show content for newly-activated tab
     // contentEls[event.detail.index].classList.add("content--active");
   }
+
+  let stackedDataset = [
+    {
+      label: "Men",
+      data: [590, 691, 636, 662, 686, 668, 622]
+    },
+    {
+      label: "Women",
+      data: [106, 131, 156, 184, 186, 142, 124]
+    },
+    {
+      label: "Kids",
+      data: [56, 91, 76, 84, 106, 102, 104]
+    }
+  ];
+
+  let salesAxisLabel = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 </script>
 
 <style>
@@ -119,7 +136,8 @@
       showYLabel={true}
       showXGrid={true}
       showYGrid={true}
-      showLegend={true} />
+      showLegend={true}
+      data={stackedDataset} />
   </div>
 </div>
 
@@ -133,7 +151,8 @@
       showYLabel={true}
       showXGrid={true}
       showYGrid={true}
-      showLegend={true} />
+      showLegend={true}
+      data={stackedDataset} />
   </div>
   <div class="w-full h-64 lg:w-1/2 mb-4 custom-card">
     <ChartLine
@@ -145,7 +164,8 @@
       showYLabel={true}
       showXGrid={true}
       showYGrid={true}
-      showLegend="true" />
+      showLegend={true}
+      data={stackedDataset} />
   </div>
 </div>
 
@@ -185,7 +205,7 @@
 
 <div class="flex flex-wrap">
   <div class="w-full h-64 xl:w-1/3 mb-4 custom-card">
-    <ChartLine type="pie" showLegend={true} />
+    <ChartLine type="pie" showLegend={true} axisLabel={salesAxisLabel} />
   </div>
   <div class="w-full h-64 xl:w-1/3 mb-4 custom-card">
     <ChartLine type="doughnut" showLegend={true} donutPercent="80" />

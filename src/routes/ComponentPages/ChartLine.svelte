@@ -25,15 +25,18 @@
     donutPercent = type == "doughnut" ? 50 : 0,
     //  Pie
     pieSpacing = 3,
-    color1 = "#38a169",
-    color2 = "#e53e3e",
-    color3 = "#d69e2e",
-    color4 = "#319795",
-    color5 = "#3182ce",
-    color6 = "#805ad5",
-    color7 = "#d000d5",
+    backgroundColors = [
+      "#38a169",
+      "#e53e3e",
+      "#d69e2e",
+      "#319795",
+      "#3182ce",
+      "#805ad5",
+      "#d000d5"
+    ],
+    data,
     chartLabel = "Total Sales",
-    xAxisLabel = ["Q1", "Q2", "Q3", "Q4"];
+    axisLabel = ["Q1", "Q2", "Q3", "Q4"];
 
   let chartId = "random" + Math.floor(Math.random() * 10000 + 1),
     backgroundColor,
@@ -95,25 +98,35 @@
         borderWidth: lineThickness,
         pointRadius: pointRadius,
         pointBackgroundColor: pointColor
+      },
+      {
+        label: chartLabel,
+        data: [5, 2, 22, 12, 19, 3, 4],
+        lineTension: lineCurve ? 0.4 : 0,
+        fill: lineArea,
+        backgroundColor: hexToHSL(lineColor, 0.2),
+        borderColor: hexToHSL(lineColor, 1),
+        borderWidth: lineThickness,
+        pointRadius: pointRadius,
+        pointBackgroundColor: pointColor
       }
     ];
 
     if (type == "bar" || type == "horizontalBar") {
       if (barType == "stacked" || barType == "grouped") {
-        dataset = [
-          {
-            label: "New Clients",
-            backgroundColor: color1,
-            data: [590, 691, 636, 662, 686, 668, 622],
+        let groupedDataSet = [];
+
+        for (let i = 0; i < data.length; i++) {
+          let groupedData = {
+            label: data[i].label,
+            backgroundColor: backgroundColors[i],
+            data: data[i].data,
             barPercentage: barPercent / 100
-          },
-          {
-            label: "Retained Clients",
-            backgroundColor: color2,
-            data: [106, 131, 156, 184, 186, 142, 124],
-            barPercentage: barPercent / 100
-          }
-        ];
+          };
+          groupedDataSet.push(groupedData);
+        }
+
+        dataset = groupedDataSet;
       } else {
         dataset = [
           {
@@ -129,15 +142,7 @@
         {
           label: chartLabel,
           data: [12, 19, 3, 5, 2, 3, 5],
-          backgroundColor: [
-            color1,
-            color2,
-            color3,
-            color4,
-            color5,
-            color6,
-            color7
-          ],
+          backgroundColor: backgroundColors,
           borderColor: currentBackgroundColor,
           borderWidth: pieSpacing
         }
@@ -150,7 +155,7 @@
       var myChart = new Chart(ctx, {
         type: type,
         data: {
-          labels: xAxisLabel,
+          labels: axisLabel,
           datasets: dataset
         },
         options: {
