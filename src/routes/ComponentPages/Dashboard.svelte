@@ -31,6 +31,20 @@
     {
       label: "Women",
       data: [106, 131, 156, 184, 186, 142, 124]
+    }
+  ];
+
+  let newSalesAxisLabel = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  // Product Sales - Bar stacked
+  let salesDataset = [
+    {
+      label: "Men",
+      data: [590, 691, 636, 662, 686, 668, 622]
+    },
+    {
+      label: "Women",
+      data: [106, 131, 156, 184, 186, 142, 124]
     },
     {
       label: "Kids",
@@ -38,7 +52,76 @@
     }
   ];
 
-  let salesAxisLabel = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let salesAxisLabel = ["Q1", "Q2", "Q3", "Q4"];
+
+  let salesBackgroundColors = ["red", "green", "blue"];
+
+  // Statistics - Line
+  let statsDataset = [
+    {
+      label: "Sales",
+      data: [
+        1800,
+        1700,
+        1600,
+        1625,
+        1750,
+        1668,
+        1622,
+        1500,
+        1725,
+        1550,
+        1468,
+        1322
+      ]
+    },
+    {
+      label: "Visits",
+      data: [
+        1306,
+        1131,
+        1056,
+        1284,
+        1186,
+        1142,
+        1024,
+        1326,
+        1214,
+        1086,
+        1342,
+        1244
+      ]
+    },
+    {
+      label: "Clicks",
+      data: [156, 291, 476, 384, 106, 402, 126, 211, 276, 184, 206, 404]
+    }
+  ];
+
+  let statsAxisLabel = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec"
+  ];
+
+  // Total Sales - Pi
+  let totalSalesDataset = [
+    {
+      label: "Sales",
+      data: [542, 154, 82, 198]
+    }
+  ];
+
+  let totalSalesAxisLabel = ["Direct", "Affiliate", "Sponsored", "E-mail"];
 </script>
 
 <style>
@@ -126,8 +209,8 @@
   </div>
 </div>
 <div class="flex flex-wrap">
-  Product Sales
   <div class="w-full h-64 mb-4 custom-card">
+    Product Sales
     <ChartLine
       type="bar"
       barType="stacked"
@@ -137,7 +220,8 @@
       showXGrid={true}
       showYGrid={true}
       showLegend={true}
-      data={stackedDataset} />
+      data={salesDataset}
+      backgroundColors={salesBackgroundColors} />
   </div>
 </div>
 
@@ -178,17 +262,8 @@
       showXLabel={true}
       showYLabel={true}
       showXGrid={true}
-      showYGrid={true} />
-  </div>
-  <div class="w-full h-64 xl:w-1/3 mb-4 custom-card">
-    <ChartLine
-      type="line"
-      lineColor="#38A169"
-      showXLabel={true}
-      showYLabel={true}
-      showXGrid={true}
       showYGrid={true}
-      lineArea={true} />
+      data={stackedDataset} />
   </div>
   <div class="w-full h-64 xl:w-1/3 mb-4 bg-dark-grad">
     <ChartLine
@@ -199,20 +274,41 @@
       showYLabel={true}
       showXGrid={true}
       showYGrid={true}
-      lineCurve={true} />
+      lineArea={true}
+      data={stackedDataset} />
+  </div>
+  <div class="w-full h-64 xl:w-1/3 mb-4 custom-card">
+    <ChartLine
+      type="line"
+      lineColor="#38A169"
+      showLegend={true}
+      showXLabel={true}
+      showYLabel={true}
+      showXGrid={true}
+      showYGrid={true}
+      lineCurve={true}
+      pointRadius="0"
+      data={statsDataset}
+      axisLabel={statsAxisLabel} />
   </div>
 </div>
 
 <div class="flex flex-wrap">
-  <div class="w-full h-64 xl:w-1/3 mb-4 custom-card">
+  <!-- <div class="w-full h-64 xl:w-1/3 mb-4 custom-card">
     <ChartLine type="pie" showLegend={true} axisLabel={salesAxisLabel} />
-  </div>
+  </div> -->
   <div class="w-full h-64 xl:w-1/3 mb-4 custom-card">
-    <ChartLine type="doughnut" showLegend={true} donutPercent="80" />
+    Total Sales
+    <ChartLine
+      type="doughnut"
+      showLegend={true}
+      donutPercent="80"
+      data={totalSalesDataset}
+      axisLabel={totalSalesAxisLabel} />
   </div>
-  <div class="w-full h-64 xl:w-1/3 mb-4 custom-card">
-    <ChartLine type="doughnut" showLegend={true} />
-  </div>
+  <!-- <div class="w-full h-64 xl:w-1/3 mb-4 custom-card">
+    <ChartLine type="doughnut" showLegend={true} axisLabel={salesAxisLabel} />
+  </div> -->
 </div>
 
 <div class="flex flex-wrap">

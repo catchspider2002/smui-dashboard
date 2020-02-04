@@ -26,13 +26,16 @@
     //  Pie
     pieSpacing = 3,
     backgroundColors = [
-      "#38a169",
-      "#e53e3e",
-      "#d69e2e",
-      "#319795",
-      "#3182ce",
-      "#805ad5",
-      "#d000d5"
+      "#f56565",
+      "#48bb78",
+      "#667eea",
+      "#ed8936",
+      "#38b2ac",
+      "#9f7aea",
+      "#ecc94b",
+      "#4299e1",
+      "#ed64a6",
+      "#a0aec0"
     ],
     data,
     chartLabel = "Total Sales",
@@ -41,10 +44,6 @@
   let chartId = "random" + Math.floor(Math.random() * 10000 + 1),
     backgroundColor,
     gridColor; // hex;
-
-  // let currentTheme = localStorage.getItem("theme") || "light";
-  // console.log("currentTheme: " + currentTheme);
-  // $: newTheme = localStorage.getItem("theme") || "light";
 
   // let themeColor = "#805ad5"; // purple-600
   // let themeColor = hexToHSL("38a169", 1);
@@ -55,13 +54,13 @@
     curr_theme = value;
   });
 
-  afterUpdate(createLineChart);
+  afterUpdate(createChart);
 
-  $: curr_theme, afterUpdate(createLineChart);
+  $: curr_theme, afterUpdate(createChart);
 
-  function createLineChart() {
+  function createChart() {
     curr_theme = localStorage.getItem("theme") || "light";
-    console.log("createLineChart curr_theme: " + curr_theme);
+    console.log("createChart curr_theme: " + curr_theme);
 
     if (!labelColor) {
       if (backgroundColor) {
@@ -83,34 +82,30 @@
       if (curr_theme == "light") gridColor = "hsl(0, 0%, 100%)";
       else gridColor = "hsl(0, 0%, 25.9%)";
     } else gridColor = hexToHSL(currentLabelColor, 0.1);
-    // console.log("gridColor: " + gridColor);
     let newLabelColor = hexToHSL(currentLabelColor, 0.9);
     pointColor = pointColor || backgroundColor;
 
-    let dataset = [
-      {
-        label: chartLabel,
-        data: [12, 19, 3, 5, 2, 3, 4],
-        lineTension: lineCurve ? 0.4 : 0,
-        fill: lineArea,
-        backgroundColor: hexToHSL(lineColor, 0.2),
-        borderColor: hexToHSL(lineColor, 1),
-        borderWidth: lineThickness,
-        pointRadius: pointRadius,
-        pointBackgroundColor: pointColor
-      },
-      {
-        label: chartLabel,
-        data: [5, 2, 22, 12, 19, 3, 4],
-        lineTension: lineCurve ? 0.4 : 0,
-        fill: lineArea,
-        backgroundColor: hexToHSL(lineColor, 0.2),
-        borderColor: hexToHSL(lineColor, 1),
-        borderWidth: lineThickness,
-        pointRadius: pointRadius,
-        pointBackgroundColor: pointColor
+    let dataset = [];
+
+    if (type == "line") {
+      let lineDataSet = [];
+      for (let i = 0; i < data.length; i++) {
+        let lineData = {
+          label: data[i].label,
+          data: data[i].data,
+          lineTension: lineCurve ? 0.4 : 0,
+          fill: lineArea,
+          backgroundColor: hexToHSL(lineColor, 0.2),
+          borderColor:
+            data.length > 1 ? backgroundColors[i] : hexToHSL(lineColor, 1),
+          borderWidth: lineThickness,
+          pointRadius: pointRadius,
+          pointBackgroundColor: pointColor
+        };
+        lineDataSet.push(lineData);
       }
-    ];
+      dataset = lineDataSet;
+    }
 
     if (type == "bar" || type == "horizontalBar") {
       if (barType == "stacked" || barType == "grouped") {
@@ -141,7 +136,7 @@
       dataset = [
         {
           label: chartLabel,
-          data: [12, 19, 3, 5, 2, 3, 5],
+          data: data[0].data,
           backgroundColor: backgroundColors,
           borderColor: currentBackgroundColor,
           borderWidth: pieSpacing
@@ -296,7 +291,7 @@
 
   function onResize() {
     console.log("Resized");
-    afterUpdate(createLineChart);
+    afterUpdate(createChart);
     // location.reload();
     // console.log("Resized agter");
   }

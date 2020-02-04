@@ -3,6 +3,30 @@
   import Example from "./Example.svelte";
   import ChartLine from "./ChartLine.svelte";
   import Chart from "chart.js";
+
+  let singleDataset = [
+    {
+      label: "Men",
+      data: [590, 691, 636, 662, 686, 668, 622]
+    }
+  ];
+
+  let multipleDataset = [
+    {
+      label: "Men",
+      data: [590, 691, 636, 662, 686, 668, 622]
+    },
+    {
+      label: "Women",
+      data: [106, 131, 156, 184, 186, 142, 124]
+    },
+    {
+      label: "Kids",
+      data: [56, 91, 76, 84, 106, 102, 104]
+    }
+  ];
+
+  let salesAxisLabel = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 </script>
 
 <style>
@@ -45,7 +69,8 @@
             showXLabel={true}
             showYLabel={true}
             showXGrid={true}
-            showYGrid={true} />
+            showYGrid={true}
+            data={multipleDataset} />
         </div>
       </div>
     </Example>
@@ -60,7 +85,8 @@
             showYLabel={true}
             showXGrid={true}
             showYGrid={true}
-            lineArea={true} />
+            lineArea={true}
+            data={singleDataset} />
         </div>
       </div>
     </Example>
@@ -78,7 +104,8 @@
             showYLabel={true}
             showXGrid={true}
             showYGrid={true}
-            lineCurve={true} />
+            lineCurve={true}
+            data={multipleDataset} />
         </div>
       </div>
     </Example>
@@ -137,7 +164,8 @@
             showYLabel={true}
             showXGrid={true}
             showYGrid={true}
-            showLegend={true} />
+            showLegend={true}
+            data={multipleDataset} />
         </div>
       </div>
     </Example>
@@ -154,7 +182,8 @@
             showYLabel={true}
             showXGrid={true}
             showYGrid={true}
-            showLegend="true" />
+            showLegend="true"
+            data={multipleDataset} />
         </div>
       </div>
     </Example>
@@ -162,7 +191,11 @@
       <span slot="header">Pie Chart</span>
       <div slot="vertical" class="mb-8">
         <div class="w-full h-64 mb-4 custom-card">
-          <ChartLine type="pie" showLegend={true} />
+          <ChartLine
+            type="pie"
+            showLegend={true}
+            data={multipleDataset}
+            axisLabel={salesAxisLabel} />
         </div>
       </div>
     </Example>
@@ -170,7 +203,11 @@
       <span slot="header">Doughnut Chart</span>
       <div slot="vertical" class="mb-8">
         <div class="w-full h-64 mb-4 custom-card">
-          <ChartLine type="doughnut" showLegend={true} />
+          <ChartLine
+            type="doughnut"
+            showLegend={true}
+            data={multipleDataset}
+            axisLabel={salesAxisLabel} />
         </div>
       </div>
     </Example>
@@ -178,7 +215,12 @@
       <span slot="header">Doughnut Chart - Custom Percentage</span>
       <div slot="vertical" class="mb-8">
         <div class="w-full h-64 mb-4 custom-card">
-          <ChartLine type="doughnut" showLegend={true} donutPercent="80" />
+          <ChartLine
+            type="doughnut"
+            showLegend={true}
+            donutPercent="80"
+            data={multipleDataset}
+            axisLabel={salesAxisLabel} />
         </div>
       </div>
     </Example>
