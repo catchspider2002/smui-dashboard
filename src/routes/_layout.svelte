@@ -172,6 +172,11 @@
       name: "Dashboard",
       route: "/ComponentPages/Dashboard",
       indent: 2
+    },
+    {
+      name: "Electron",
+      route: "/ComponentPages/Electron",
+      indent: 2
     }
   ];
 
