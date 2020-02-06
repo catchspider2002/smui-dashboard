@@ -95,19 +95,19 @@
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox='-1024 -1024 2048 2048' class="atom">
   <g>
     <circle class="nucleus" fill="#ababab" stroke="#ff0087" r="132" />
-    <circle class="ring" r="230" fill="none" stroke="#ff0087" stroke-width="15" />
-    <circle class="ring" r="320" fill="none" stroke="#ff0087" stroke-width="15" />
-    <circle class="ring" r="410" fill="none" stroke="#ff0087" stroke-width="15" />
-    <circle class="ring" r="500" fill="none" stroke="#ff0087" stroke-width="15" />
-    <circle class="ring" r="590" fill="none" stroke="#ff0087" stroke-width="15" />
-    <circle class="ring" r="680" fill="none" stroke="#ff0087" stroke-width="15" />
-    <circle class="ring" r="770" fill="none" stroke="#ff0087" stroke-width="15" />
-    <circle class="electron" fill="#ababab" stroke="#ababab" stroke-width="12" cx="225" r="28" />
-    <circle class="electron" fill="#ababab" stroke="#ababab" stroke-width="12" cx="-290" cy="-142" r="28" />
-    <circle class="electron" fill="#ababab" stroke="#ababab" stroke-width="12" cx="310" cy="270" r="28" />
-    <circle class="electron" fill="#ababab" stroke="#ababab" stroke-width="12" cx="400" cy="-295" r="28" />
-    <circle class="electron" fill="#ababab" stroke="#ababab" stroke-width="12" cx="-400" cy="295" r="28" />
-    <circle class="electron" fill="#ababab" stroke="#ababab" stroke-width="12" cx="-515" cy="-295" r="28" />
+    <circle class="ring" r="230" fill="none" stroke="#ff0087" stroke-width="10" />
+    <circle class="ring" r="320" fill="none" stroke="#ff0087" stroke-width="10" />
+    <circle class="ring" r="410" fill="none" stroke="#ff0087" stroke-width="10" />
+    <circle class="ring" r="500" fill="none" stroke="#ff0087" stroke-width="10" />
+    <circle class="ring" r="590" fill="none" stroke="#ff0087" stroke-width="10" />
+    <circle class="ring" r="680" fill="none" stroke="#ff0087" stroke-width="10" />
+    <circle class="ring" r="770" fill="none" stroke="#ff0087" stroke-width="10" />
+    <circle class="electron" fill="#ababab" cx="225" r="34" />
+    <circle class="electron" fill="#ababab" cx="-290" cy="-142" r="34" />
+    <circle class="electron" fill="#ababab" cx="310" cy="270" r="34" />
+    <circle class="electron" fill="#ababab" cx="400" cy="-295" r="34" />
+    <circle class="electron" fill="#ababab" cx="-400" cy="295" r="34" />
+    <circle class="electron" fill="#ababab" cx="-515" cy="-295" r="34" />
   </g>
 </svg>
 </div>

@@ -5,6 +5,13 @@
   import Tab, { Icon, Label } from "@smui/tab";
   import TabBar from "@smui/tab-bar";
   import Button from "@smui/button";
+  import SVGIcon from "svelte-awesome/components/Icon.svelte";
+  import {
+    beer,
+    refresh,
+    comment,
+    camera,
+  } from "svelte-awesome/icons";
 
   let active = "Today";
 
@@ -171,6 +178,15 @@
   <div class="w-full h-64 lg:w-1/2 mb-4 bg-gray-500" />
   <div class="w-full h-64 lg:w-1/2 mb-4 bg-gray-400" />
 </div> -->
+
+<div class="flex flex-wrap">
+  <div class="w-full h-64 lg:w-1/2 xl:w-1/4 mb-4 bg-gray-500">
+  <Icon data={refresh} scale="2" />
+  </div>
+  <div class="w-full h-64 lg:w-1/2 xl:w-1/4 mb-4 bg-gray-400"></div>
+  <div class="w-full h-64 lg:w-1/2 xl:w-1/4 mb-4 bg-gray-500"></div>
+  <div class="w-full h-64 lg:w-1/2 xl:w-1/4 mb-4 bg-gray-400"></div>
+</div>
 
 <div class="flex flex-wrap">
   <div class="w-full h-64 mb-4 bg-dark-grad">
