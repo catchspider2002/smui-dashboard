@@ -2,11 +2,10 @@
   import { onMount } from "svelte";
   import ChartLine from "./ChartLine.svelte";
   import Chart from "chart.js";
+  import SmallCard from "./SmallCard.svelte";
   import Tab, { Icon, Label } from "@smui/tab";
   import TabBar from "@smui/tab-bar";
   import Button from "@smui/button";
-  import SVGIcon from "svelte-awesome/components/Icon.svelte";
-  import { beer, refresh, comment, camera } from "svelte-awesome/icons";
 
   let active = "Today";
 
@@ -175,27 +174,18 @@
 </div> -->
 
 <div class="flex flex-wrap">
-  <div class="w-full h-64 lg:w-1/2 xl:w-1/4 mb-4 bg-gray-500" />
-  <div class="w-full h-64 lg:w-1/2 xl:w-1/4 mb-4 bg-gray-400">
-    <div class="flex self-center items-center bg-gray-200">
-      <div class="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-        <SVGIcon data={refresh} scale="5" />
-      </div>
-      <div class="flex-auto text-gray-700 bg-gray-400">
-        <div class="flex flex-col bg-gray-200">
-          <div class="text-gray-700 text-left px-4 py-2 m-2">Short</div>
-          <div class="text-gray-700 text-left px-4 py-2 m-2">Length</div>
-          <div class="text-gray-700 text-right px-4 py-2 m-2">
-            Medium length
-          </div>
-        </div>
-
-      </div>
-    </div>
-
+  <div class="w-full lg:w-1/2 xl:w-1/4 p-4">
+    <SmallCard />
   </div>
-  <div class="w-full h-64 lg:w-1/2 xl:w-1/4 mb-4 bg-gray-500" />
-  <div class="w-full h-64 lg:w-1/2 xl:w-1/4 mb-4 bg-gray-400" />
+  <div class="w-full lg:w-1/2 xl:w-1/4 p-4">
+    <SmallCard />
+  </div>
+  <div class="w-full lg:w-1/2 xl:w-1/4 p-4">
+    <SmallCard />
+  </div>
+  <div class="w-full lg:w-1/2 xl:w-1/4 p-4">
+    <SmallCard />
+  </div>
 </div>
 
 <div class="flex flex-wrap">
