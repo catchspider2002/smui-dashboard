@@ -6,6 +6,8 @@
   import Tab, { Icon, Label } from "@smui/tab";
   import TabBar from "@smui/tab-bar";
   import Button from "@smui/button";
+  import SVGIcon from "svelte-awesome/components/Icon.svelte";
+  import { beer, refresh, comment, camera } from "svelte-awesome/icons";
 
   let active = "Today";
 
@@ -175,13 +177,13 @@
 
 <div class="flex flex-wrap">
   <div class="w-full lg:w-1/2 xl:w-1/4 p-4">
-    <SmallCard />
+    <SmallCard icon={refresh} iconBackground="bg-green-400" />
   </div>
   <div class="w-full lg:w-1/2 xl:w-1/4 p-4">
-    <SmallCard />
+    <SmallCard icon={beer} iconBackground="bg-yellow-400" />
   </div>
   <div class="w-full lg:w-1/2 xl:w-1/4 p-4">
-    <SmallCard />
+    <SmallCard icon={camera} iconBackground="bg-green-400" />
   </div>
   <div class="w-full lg:w-1/2 xl:w-1/4 p-4">
     <SmallCard />
